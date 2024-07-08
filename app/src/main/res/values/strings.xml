@@ -2,10 +2,12 @@
     <string name="app_name">AlmaSoft</string>
     <string name="lbl_InicioSesion">Inicio de Sesión</string>
     <string name="lbl_AunRegistrado">¿Aún no estas registrado?</string>
-    <string name="textViewTitulo">Registro de Usuario</string>
-    <string name="textViewSexo">Sexo</string>
-    <string name="textViewDeporte">Deporte Favorito</string>
-    <string name="textViewGustos">Comida Favorita</string>
+    <string name="textViewRegistrarUsuario">Registro de Usuario</string>
+    <string name="textViewNombre">Nombre: </string>
+    <string name="textViewApellidoM">Apellido Materno: </string>
+    <string name="textViewApellidoP">Apellido Paterno: </string>
+    <string name="textViewCodUsuario">Usuario: </string>
+    <string name="textViewContraseña">Contraseña: </string>
     <string name="txt_usuario">Usuario</string>
     <string name="txt_contraseña">Contraseña</string>
     <string name="rb1">Masculino</string>

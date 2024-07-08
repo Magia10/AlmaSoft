@@ -8,7 +8,7 @@
     android:background="@drawable/login"
     android:gravity="end|bottom"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".vista.LoginActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/lbl_InicioSesion"
                 android:textAlignment="center"
-                android:textColor="@color/blueLogin"
+                android:textColor="@color/MarronOscuro"
                 android:textSize="34sp"
                 android:textStyle="bold" />
 
@@ -87,7 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="@color/blueLogin"
+                android:backgroundTint="@color/MarronOscuro"
                 android:onClick="ingresar"
                 android:text="@string/btn_ingresar"
                 android:textSize="20sp"
@@ -103,7 +103,7 @@
         android:layout_height="wrap_content"
         android:text="@string/lbl_AunRegistrado"
         android:textAlignment="center"
-        android:textColor="@color/blueLogin"
+        android:textColor="@color/MarronOscuro"
         android:textSize="18sp"
         tools:ignore="TextContrastCheck" />
 
@@ -116,7 +116,7 @@
         android:onClick="enviarRegistrarse"
         android:text="@string/lbl_registrarse"
         android:textAlignment="center"
-        android:textColor="@color/blueLogin"
+        android:textColor="@color/MarronOscuro"
         android:textSize="19sp"
         android:textStyle="bold" />
 </LinearLayout>
