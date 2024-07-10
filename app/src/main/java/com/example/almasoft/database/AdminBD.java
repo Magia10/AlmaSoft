@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQuery;
 import com.example.almasoft.database.UsuarioContract.UsuarioEntry;
+import com.example.almasoft.modelo.Usuario;
 
 import androidx.annotation.Nullable;
 
@@ -24,19 +25,27 @@ public class AdminBD extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE " + UsuarioEntry.TABLE_NAME + " ("
                 + UsuarioEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + UsuarioEntry.ID + " TEXT NOT NULL,"
                 + UsuarioEntry.NOMBRE + " TEXT NOT NULL,"
                 + UsuarioEntry.APELLIDO_P + " TEXT NOT NULL,"
                 + UsuarioEntry.APELLIDO_M + " TEXT NOT NULL,"
                 + UsuarioEntry.COD_USUARIO + " TEXT NOT NULL,"
-                + UsuarioEntry.PASSWORD + " TEXT NOT NULL,"
-                + "UNIQUE (" + UsuarioEntry.ID + "))");
+                + UsuarioEntry.PASSWORD + " TEXT NOT NULL)");
         }
-        //On Upgrade de SQlite
+
+
+        public long guardarUsuario(SQLiteDatabase db, Usuario usuario){
+        return db.insert(
+                UsuarioEntry.TABLE_NAME,
+                null,
+                usuario.toContentValues());
+        }
+
+    //On Upgrade de SQlite
         @Override
         public void onUpgrade (SQLiteDatabase db,int oldVersion, int newVersion){
 
         }
-    }
+
+}
 
 
