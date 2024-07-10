@@ -21,6 +21,8 @@ import com.example.almasoft.modelo.Usuario;
 public class RegistrarUsuarioActivity extends AppCompatActivity {
     private Button btnRegistrar;
     private EditText txt_Nombre,txt_ApellidoP,txt_ApellidoM,txt_CodUsuario,txt_Password;
+
+    private String nombre,apellidoP,apellidoM,codUsuario,password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,14 +44,20 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
             public void onClick(View v) {
                 AdminBD adminBD = new AdminBD(getApplicationContext());
                 SQLiteDatabase database = adminBD.getWritableDatabase();
-                adminBD.guardarUsuario(database, new Usuario(
-                        txt_Nombre.getText().toString(),
-                        txt_ApellidoP.getText().toString(),
-                        txt_ApellidoM.getText().toString(),
-                        txt_CodUsuario.getText().toString(),
-                        txt_Password.getText().toString()));
+                obtenerDatos();
+                if(!nombre.isEmpty() && !apellidoP.isEmpty() && !apellidoM.isEmpty() && !codUsuario.isEmpty() && !password.isEmpty()) {
+                    adminBD.guardarUsuario(database, new Usuario(
+                            txt_Nombre.getText().toString(),
+                            txt_ApellidoP.getText().toString(),
+                            txt_ApellidoM.getText().toString(),
+                            txt_CodUsuario.getText().toString(),
+                            txt_Password.getText().toString()));
 
-                Toast.makeText(getApplicationContext(), "Se agrego correctamente el registro!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Se agrego correctamente el registro!", Toast.LENGTH_SHORT).show();
+                    limpiar();
+                }else{
+                    Toast.makeText(getApplicationContext(), "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -63,17 +71,21 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void insertarUsuario(View view){
-        AdminBD adminBD = new AdminBD(getApplicationContext());
-        SQLiteDatabase database = adminBD.getWritableDatabase();
-        adminBD.guardarUsuario(database, new Usuario(
-                txt_Nombre.getText().toString(),
-                txt_ApellidoP.getText().toString(),
-                txt_ApellidoM.getText().toString(),
-                txt_CodUsuario.getText().toString(),
-                txt_Password.getText().toString()));
+    public void limpiar(){
+        txt_Nombre.setText("");
+        txt_ApellidoP.setText("");
+        txt_ApellidoM.setText("");
+        txt_CodUsuario.setText("");
+        txt_Password.setText("");
+        txt_Nombre.requestFocus();
+    }
 
-        Toast.makeText(getApplicationContext(), "Se agrego correctamente el registro!", Toast.LENGTH_SHORT).show();
+    public void obtenerDatos(){
+        nombre = txt_Nombre.getText().toString();
+        apellidoP = txt_ApellidoP.getText().toString();
+        apellidoM= txt_ApellidoM.getText().toString();
+        codUsuario=txt_CodUsuario.getText().toString();
+        password= txt_Password.getText().toString();
     }
 
 
