@@ -19,7 +19,7 @@ public class ProductViewModel extends AndroidViewModel {
         repository = new ProductRepository(application);
         allProducts = repository.getAllProducts();
     }
-
+//hola
     public void insert(Product product) {
         repository.insert(product);
     }
