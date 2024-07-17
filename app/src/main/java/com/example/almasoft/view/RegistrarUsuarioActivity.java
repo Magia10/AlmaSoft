@@ -1,4 +1,4 @@
-package com.example.almasoft.vista;
+package com.example.almasoft.view;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.almasoft.R;
 import com.example.almasoft.database.AdminBD;
-import com.example.almasoft.modelo.Usuario;
+import com.example.almasoft.model.Usuario;
 
 public class RegistrarUsuarioActivity extends AppCompatActivity {
     private Button btnRegistrar;

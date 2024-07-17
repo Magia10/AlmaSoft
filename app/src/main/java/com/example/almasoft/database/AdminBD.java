@@ -3,9 +3,9 @@ package com.example.almasoft.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteQuery;
+
 import com.example.almasoft.database.UsuarioContract.UsuarioEntry;
-import com.example.almasoft.modelo.Usuario;
+import com.example.almasoft.model.Usuario;
 
 import androidx.annotation.Nullable;
 

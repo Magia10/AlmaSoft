@@ -1,11 +1,10 @@
-package com.example.almasoft.vista;
+package com.example.almasoft.view;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +29,9 @@ public class LoginActivity extends AppCompatActivity {
         });
         ejecucionBD();
         lblRegistrarse = findViewById(R.id.lblRegistrarse);
+
+        Intent i = new Intent(this, ProductActivity.class);
+        startActivity(i);
     }
     //Ejecucion de BD
     public void ejecucionBD(){

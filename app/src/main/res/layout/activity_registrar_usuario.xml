@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/fondo"
     android:orientation="vertical"
-    tools:context=".vista.RegistrarUsuarioActivity">
+    tools:context=".view.RegistrarUsuarioActivity">
 
     <TextView
         android:id="@+id/textView"

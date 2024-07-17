@@ -1,4 +1,4 @@
-package com.example.almasoft.modelo;
+package com.example.almasoft.model;
 
 import android.content.ContentValues;
 
