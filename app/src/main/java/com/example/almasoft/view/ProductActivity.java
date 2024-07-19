@@ -32,7 +32,7 @@ public class ProductActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
-        final ProductAdapter adapter = new ProductAdapter(ProductActivity.this);
+        final ProductAdapter adapter = new ProductAdapter(ProductActivity.this,editTextName,editTextPrice);
         recyclerView.setAdapter(adapter);
 
         productViewModel = new ViewModelProvider(this).get(ProductViewModel.class);
@@ -50,12 +50,6 @@ public class ProductActivity extends AppCompatActivity {
             }
         });
 
-        adapter.setOnItemClickListener(new ProductAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(Product product) {
-                editProduct(product);
-            }
-        });
     }
 
     private void addProduct() {

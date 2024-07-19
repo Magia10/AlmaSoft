@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
     private List<Product> products = new ArrayList<>();
     private OnItemClickListener listener;
     private Context context;
+    private EditText editTextName, editTextPrice;
 
     @NonNull
     @Override
@@ -31,8 +33,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
                 .inflate(R.layout.product_item, parent, false);
         return new ProductHolder(itemView);
     }
-    public ProductAdapter(Context context){
+    public ProductAdapter(Context context, EditText editTextName, EditText editTextPrice){
         this.context = context;
+        this.editTextName = editTextName;
+        this.editTextPrice = editTextPrice;
     }
     @Override
     public void onBindViewHolder(@NonNull ProductHolder holder, int position) {
@@ -42,6 +46,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
         holder.buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                editTextName.setText(currentProduct.getName());
+                editTextPrice.setText(String.valueOf(currentProduct.getPrice()));
                 Toast.makeText(context, "Botón presionado!", Toast.LENGTH_SHORT).show();
             }
         });
