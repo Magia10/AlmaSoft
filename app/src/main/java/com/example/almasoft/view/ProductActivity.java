@@ -1,17 +1,13 @@
 package com.example.almasoft.view;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
-
 import com.example.almasoft.R;
 import com.example.almasoft.model.Product;
 import com.example.almasoft.viewmodel.ProductViewModel;
