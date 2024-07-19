@@ -20,4 +20,12 @@
     <string name="btn_reiniciar">Reiniciar</string>
     <string name="lbl_registrarse">Registrarse Ahora!</string>
     <string name="IB">Información</string>
+    <string-array name="location_array">
+        <item>Almacén 1</item>
+        <item>Almacén 2</item>
+        <item>Almacén 3</item>
+        <item>Sala de Ventas</item>
+    </string-array>
+
+
 </resources>

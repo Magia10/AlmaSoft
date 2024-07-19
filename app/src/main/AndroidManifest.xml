@@ -13,6 +13,12 @@
         android:theme="@style/Theme.AlmaSoft"
         tools:targetApi="31">
         <activity
+            android:name=".view.CreateProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".editarProducto"
+            android:exported="false" />
+        <activity
             android:name=".editprodut"
             android:exported="false" />
         <activity

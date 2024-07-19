@@ -6,38 +6,24 @@
     tools:context=".view.ProductActivity"
     android:background="#188DA5">
 
-    <EditText
-        android:id="@+id/edit_text_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nombre del Producto" />
-
-    <EditText
-        android:id="@+id/edit_text_price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ingrese Precio"
-        android:layout_below="@+id/edit_text_name" />
-
     <Button
         android:id="@+id/button_add"
         android:layout_width="141dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_text_price"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="151dp"
+        android:layout_marginStart="242dp"
         android:layout_marginTop="-4dp"
-        android:layout_marginEnd="119dp"
-        android:background="#17464C"
-        android:backgroundTint="#17464C"
+        android:layout_marginEnd="27dp"
+        android:backgroundTint="#23808C"
         android:text="AGREGAR" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="579dp"
         android:layout_below="@+id/button_add"
+        android:layout_marginTop="108dp"
         android:padding="16dp" />
 
 </RelativeLayout>

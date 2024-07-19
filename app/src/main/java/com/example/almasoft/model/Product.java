@@ -7,12 +7,21 @@ public class Product {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String name;
-    private double price;
+    private double salePrice;
+    private double purchasePrice;
+    private String brand;
+    private String address;
+    private int quantity;
 
     // Constructor, getters y setters
-    public Product(String name, double price) {
+    public Product(String name, double salePrice,double purchasePrice,String brand,
+    String address,int quantity) {
         this.name = name;
-        this.price = price;
+        this.salePrice = salePrice;
+        this.purchasePrice = purchasePrice;
+        this.brand = brand;
+        this.address = address;
+        this.quantity = quantity;
     }
 
     public int getId() {
@@ -31,11 +40,43 @@ public class Product {
         this.name = name;
     }
 
-    public double getPrice() {
-        return price;
+    public double getSalePrice() {
+        return salePrice;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setSalePrice(double salePrice) {
+        this.salePrice = salePrice;
+    }
+
+    public double getPurchasePrice() {
+        return purchasePrice;
+    }
+
+    public void setPurchasePrice(double purchasePrice) {
+        this.purchasePrice = purchasePrice;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

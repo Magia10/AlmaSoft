@@ -33,21 +33,19 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
                 .inflate(R.layout.product_item, parent, false);
         return new ProductHolder(itemView);
     }
-    public ProductAdapter(Context context, EditText editTextName, EditText editTextPrice){
+    public ProductAdapter(Context context){
         this.context = context;
-        this.editTextName = editTextName;
-        this.editTextPrice = editTextPrice;
     }
     @Override
     public void onBindViewHolder(@NonNull ProductHolder holder, int position) {
         Product currentProduct = products.get(position);
         holder.textViewName.setText(currentProduct.getName());
-        holder.textViewPrice.setText(String.valueOf(currentProduct.getPrice()));
+        holder.textViewPrice.setText(String.valueOf(currentProduct.getSalePrice()));
         holder.buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editTextName.setText(currentProduct.getName());
-                editTextPrice.setText(String.valueOf(currentProduct.getPrice()));
+                //editTextName.setText(currentProduct.getName());
+                //editTextPrice.setText(String.valueOf(currentProduct.getSalePrice()));
                 Toast.makeText(context, "Botón presionado!", Toast.LENGTH_SHORT).show();
             }
         });

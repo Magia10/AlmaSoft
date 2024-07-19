@@ -6,7 +6,7 @@ import android.content.Context;
 
 import com.example.almasoft.model.Product;
 
-@Database(entities = {Product.class}, version = 1)
+@Database(entities = {Product.class}, version = 2)
 public abstract class database extends RoomDatabase{
     private static database instance;
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#97F3FF"
@@ -20,23 +21,24 @@
         android:text="Price"
         android:textSize="25sp" />
     <!-- Botón para editar -->
-    <Button
-        android:id="@+id/button_edit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#14444A"
-        android:onClick="@{() -> viewModel.onEditClick()}"
-        android:text="Editar"
-        android:textColor="#147697" />
 
     <!-- Botón para eliminar -->
     <Button
-        android:id="@+id/button_delete"
-        android:layout_width="match_parent"
+        android:id="@+id/button_edit"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#14444A"
+        android:backgroundTint="#23808C"
+        android:onClick="@{() -> viewModel.onEditClick()}"
+        android:text="Editar"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#23808C"
         android:onClick="@{() -> viewModel.onDeleteClick()}"
         android:text="Eliminar"
-        android:textColor="@android:color/holo_red_dark" />
+        android:textColor="@color/white" />
 
 </LinearLayout>
