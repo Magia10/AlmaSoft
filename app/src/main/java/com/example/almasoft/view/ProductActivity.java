@@ -32,7 +32,7 @@ public class ProductActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
-        final ProductAdapter adapter = new ProductAdapter();
+        final ProductAdapter adapter = new ProductAdapter(ProductActivity.this);
         recyclerView.setAdapter(adapter);
 
         productViewModel = new ViewModelProvider(this).get(ProductViewModel.class);
@@ -63,20 +63,51 @@ public class ProductActivity extends AppCompatActivity {
         String priceText = editTextPrice.getText().toString().trim();
 
         if (TextUtils.isEmpty(name) || TextUtils.isEmpty(priceText)) {
-            Toast.makeText(this, "Please enter both name and price", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ingrese Datos del Producto ", Toast.LENGTH_SHORT).show();
             return;
         }
 
         double price = Double.parseDouble(priceText);
         Product product = new Product(name, price);
         productViewModel.insert(product);
-        Toast.makeText(this, "Product added", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Producto Agregado", Toast.LENGTH_SHORT).show();
         editTextName.setText("");
         editTextPrice.setText("");
     }
 
     private void editProduct(Product product) {
+        editTextName.setText(product.getName());
+        editTextPrice.setText(String.valueOf(product.getPrice()));
+
+        findViewById(R.id.button_add).setVisibility(View.GONE);
+
         // Implementar funcionalidad para editar producto si se desea
     }
+    private void saveProductChanges(Product product) {
+        String name = editTextName.getText().toString().trim();
+        String priceText = editTextPrice.getText().toString().trim();
+
+        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(priceText)) {
+            Toast.makeText(this, "Ingrese Datos del Producto", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        double price = Double.parseDouble(priceText);
+
+        // Actualiza el producto con los nuevos datos
+        product.setName(name);
+        product.setPrice(price);
+
+        // Llama al ViewModel para actualizar el producto
+        productViewModel.update(product);
+        Toast.makeText(this, "Producto Actualizado", Toast.LENGTH_SHORT).show();
+
+        // Limpia los campos de texto y ajusta la visibilidad de los botones
+        editTextName.setText("");
+        editTextPrice.setText("");
+        findViewById(R.id.button_add).setVisibility(View.VISIBLE);
+    }
+
+
 
 }

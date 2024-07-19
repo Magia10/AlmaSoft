@@ -3,19 +3,40 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:background="#07DEFA">
 
     <TextView
         android:id="@+id/text_view_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Product Name"
-        android:textSize="18sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/text_view_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Price"
-        android:textSize="16sp" />
+        android:textSize="25sp" />
+    <!-- Botón para editar -->
+    <Button
+        android:id="@+id/button_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#17464C"
+        android:onClick="@{() -> viewModel.onEditClick()}"
+        android:text="Editar"
+        android:textColor="@android:color/holo_blue_dark" />
+
+    <!-- Botón para eliminar -->
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#17464C"
+        android:onClick="@{() -> viewModel.onDeleteClick()}"
+        android:text="Eliminar"
+        android:textColor="@android:color/holo_red_dark" />
+
 </LinearLayout>

@@ -4,6 +4,7 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.example.almasoft.model.Product;
 import com.example.almasoft.repository.ProductRepository;
@@ -19,7 +20,6 @@ public class ProductViewModel extends AndroidViewModel {
         repository = new ProductRepository(application);
         allProducts = repository.getAllProducts();
     }
-//holaxd
     public void insert(Product product) {
         repository.insert(product);
     }
@@ -39,4 +39,6 @@ public class ProductViewModel extends AndroidViewModel {
     public LiveData<List<Product>> getAllProducts() {
         return allProducts;
     }
+
 }
+
