@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         ejecucionBD();
         lblRegistrarse = findViewById(R.id.lblRegistrarse);
 
-        Intent i = new Intent(this, ProductActivity.class);
+        Intent i = new Intent(this, HomeActivity.class);
         startActivity(i);
     }
     //Ejecucion de BD

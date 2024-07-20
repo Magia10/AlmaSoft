@@ -8,21 +8,46 @@
     android:padding="8dp">
 
     <TextView
-        android:id="@+id/text_view_name"
+        android:id="@+id/tvName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Product Name"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/text_view_price"
+        android:id="@+id/tvSalePrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Price"
         android:textSize="25sp" />
-    <!-- Botón para editar -->
 
-    <!-- Botón para eliminar -->
+    <TextView
+        android:id="@+id/tvPurchasePrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvBrand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textSize="25sp" />
     <Button
         android:id="@+id/button_edit"
         android:layout_width="wrap_content"

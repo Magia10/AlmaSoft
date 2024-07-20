@@ -24,7 +24,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
     private List<Product> products = new ArrayList<>();
     private OnItemClickListener listener;
     private Context context;
-    private EditText editTextName, editTextPrice;
+
 
     @NonNull
     @Override
@@ -39,8 +39,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
     @Override
     public void onBindViewHolder(@NonNull ProductHolder holder, int position) {
         Product currentProduct = products.get(position);
-        holder.textViewName.setText(currentProduct.getName());
-        holder.textViewPrice.setText(String.valueOf(currentProduct.getSalePrice()));
+        holder.tvName.setText(currentProduct.getName());
+        holder.tvSalePrice.setText(String.valueOf(currentProduct.getSalePrice()));
+        holder.tvPurchasePrice.setText(String.valueOf(currentProduct.getPurchasePrice()));
+        holder.tvBrand.setText(currentProduct.getBrand());
+        holder.tvLocation.setText(currentProduct.getAddress());
+        holder.tvQuantity.setText(String.valueOf(currentProduct.getQuantity()));
+
         holder.buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,14 +74,19 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
     }
 
     class ProductHolder extends RecyclerView.ViewHolder {
-        private TextView textViewName;
-        private TextView textViewPrice;
         private Button buttonEdit, buttonDelete;
+
+        private TextView tvName, tvSalePrice,tvPurchasePrice, tvBrand, tvLocation, tvQuantity;
 
         public ProductHolder(View itemView) {
             super(itemView);
-            textViewName = itemView.findViewById(R.id.text_view_name);
-            textViewPrice = itemView.findViewById(R.id.text_view_price);
+            tvName = itemView.findViewById(R.id.tvName);
+            tvSalePrice = itemView.findViewById(R.id.tvSalePrice);
+            tvPurchasePrice = itemView.findViewById(R.id.tvPurchasePrice);
+            tvBrand = itemView.findViewById(R.id.tvBrand);
+            tvLocation = itemView.findViewById(R.id.tvLocation);
+            tvQuantity = itemView.findViewById(R.id.tvQuantity);
+
             buttonEdit = itemView.findViewById(R.id.button_edit);
             buttonDelete = itemView.findViewById(R.id.button_delete);
 
