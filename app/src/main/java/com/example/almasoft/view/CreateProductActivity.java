@@ -1,5 +1,6 @@
 package com.example.almasoft.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -62,5 +63,12 @@ public class CreateProductActivity extends AppCompatActivity {
                 Toast.makeText(CreateProductActivity.this, "Producto agregado: " + name, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    // Método para regresar a ListaPorducto
+    public void enviarListarProducto(View view) {
+        Intent i = new Intent(this, ProductActivity.class);
+        startActivity(i);
+        finish(); // Terminar la actividad actual para evitar volver atrás
     }
 }

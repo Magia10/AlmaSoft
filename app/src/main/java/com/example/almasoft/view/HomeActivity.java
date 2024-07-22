@@ -20,13 +20,20 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button buttonProducto = findViewById(R.id.buttonProducto);
+        Button buttonProducto = findViewById(R.id.buttonProdcutor);
         buttonProducto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, ProductActivity.class);
                 startActivity(intent);
             } });
-        }
     }
+
+}
+
+
+
+
+
+
 

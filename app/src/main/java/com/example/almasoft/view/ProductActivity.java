@@ -45,8 +45,16 @@ public class ProductActivity extends AppCompatActivity {
 
     }
 
+    // Método para ir a Registrar
     private void addProduct() {
         Intent i = new Intent(this, CreateProductActivity.class);
         startActivity(i);
+    }
+
+    // Método para regresar a Home
+    public void enviarHome(View view) {
+        Intent i = new Intent(this, HomeActivity.class);
+        startActivity(i);
+        finish(); // Terminar la actividad actual para evitar volver atrás
     }
 }
