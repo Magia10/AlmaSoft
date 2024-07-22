@@ -1,29 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ProductActivity"
-    android:background="#188DA5">
+    android:background="@drawable/fondo2"
+    tools:context=".view.ProductActivity">
+
+    <TextView
+        android:id="@+id/textViewProducto"
+        android:layout_width="105dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="175dp"
+        android:layout_marginBottom="55dp"
+        android:text="PRODUCTOS"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/recycler_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="39dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/MarronOscuro"
+        android:onClick="enviarLogin"
+        android:text="@string/Btnregresar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_view"
+        tools:ignore="ButtonStyle" />
 
     <Button
         android:id="@+id/button_add"
-        android:layout_width="141dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="235dp"
-        android:layout_marginTop="-4dp"
-        android:layout_marginEnd="34dp"
-        android:backgroundTint="#23808C"
-        android:text="AGREGAR" />
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/MarronOscuro"
+        android:text="AGREGAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnRegresar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="579dp"
+        android:layout_width="373dp"
+        android:layout_height="0dp"
         android:layout_below="@+id/button_add"
-        android:layout_marginTop="85dp"
-        android:padding="16dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="19dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegresar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewProducto"
+        app:layout_constraintVertical_bias="0.7" />
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="170dp"
+        android:layout_height="142dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icoprod" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

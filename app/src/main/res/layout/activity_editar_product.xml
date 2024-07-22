@@ -1,70 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#97F3FF"
+    android:background="@drawable/fondo2"
     tools:context=".view.CreateProductActivity">
 
     <EditText
         android:id="@+id/edit_text_name"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:hint="Nombre del Producto"
-        android:layout_margin="16dp" />
-
-    <EditText
-        android:id="@+id/edit_text_brand"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Marca"
-        android:layout_below="@id/edit_text_name"
-        android:layout_margin="16dp" />
-
-    <EditText
-        android:id="@+id/edit_text_quantity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Cantidad"
-        android:inputType="number"
-        android:layout_below="@id/edit_text_brand"
-        android:layout_margin="16dp" />
-
-    <EditText
-        android:id="@+id/edit_text_purchase_price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Precio de Compra"
-        android:inputType="numberDecimal"
-        android:layout_below="@id/edit_text_quantity"
-        android:layout_margin="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_brand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewProducto" />
 
     <EditText
         android:id="@+id/edit_text_public_price"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_below="@id/edit_text_purchase_price"
+        android:layout_marginBottom="9dp"
         android:hint="Precio Público"
         android:inputType="numberDecimal"
-        android:layout_below="@id/edit_text_purchase_price"
-        android:layout_margin="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/spinner_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_purchase_price" />
 
-    <Spinner
-        android:id="@+id/spinner_location"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edit_text_brand"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edit_text_public_price"
-        android:layout_margin="16dp"
-        android:background="#5ED8E8" />
+        android:layout_below="@id/edit_text_name"
+        android:layout_marginBottom="7dp"
+        android:hint="Marca"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_quantity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_name" />
+
+    <EditText
+        android:id="@+id/edit_text_purchase_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_text_quantity"
+        android:layout_marginBottom="13dp"
+        android:hint="Precio de Compra"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_public_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_quantity" />
+
+    <EditText
+        android:id="@+id/edit_text_quantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_text_brand"
+        android:layout_marginBottom="10dp"
+        android:hint="Cantidad"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_purchase_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_brand" />
 
     <Button
         android:id="@+id/button_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
         android:layout_below="@id/spinner_location"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginEnd="90dp"
         android:backgroundTint="#23808C"
-        android:text="AGREGAR" />
+        android:text="AGREGAR"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnRegresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnRegresar" />
 
-</RelativeLayout>
+    <Spinner
+        android:id="@+id/spinner_location"
+        android:layout_width="122dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/edit_text_public_price"
+        android:layout_marginBottom="20dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_public_price" />
+
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="60dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/MarronOscuro"
+        android:onClick="enviarLogin"
+        android:text="@string/Btnregresar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_location"
+        tools:ignore="ButtonStyle" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="200dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewProducto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/agregar" />
+
+    <TextView
+        android:id="@+id/textViewProducto"
+        android:layout_width="146dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="80dp"
+        android:text="@string/TextProductoNuevo"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_name"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

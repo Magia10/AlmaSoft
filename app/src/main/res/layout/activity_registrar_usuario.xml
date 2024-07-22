@@ -1,34 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fondo"
-    android:orientation="vertical"
+    android:background="@drawable/fondo2"
     tools:context=".view.RegistrarUsuarioActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50px"
-        android:layout_marginBottom="50px"
-        android:text="@string/textViewRegistrarUsuario"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="104dp"
+        android:text="@string/TextRegistrarUsuario"
         android:textAlignment="center"
         android:textColor="@color/MarronOscuro"
         android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="PxUsage" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30px"
-        android:layout_marginTop="50px"
-        android:layout_marginRight="30px"
-        android:layout_marginBottom="50px"
+        android:id="@+id/linearLayout"
+        android:layout_width="387dp"
+        android:layout_height="226dp"
+        android:layout_marginBottom="39dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="PxUsage">
 
         <LinearLayout
@@ -43,7 +48,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10px"
                 android:layout_marginBottom="10px"
-                android:text="@string/textViewNombre"
+                android:text="@string/TextNombre"
                 android:textColor="@color/MarronOscuro"
                 android:textSize="20sp" />
 
@@ -70,7 +75,7 @@
                 android:layout_marginTop="10px"
                 android:layout_marginBottom="10px"
                 android:layout_weight="1"
-                android:text="@string/textViewApellidoP"
+                android:text="@string/TextApellidoP"
                 android:textColor="@color/MarronOscuro"
                 android:textSize="20sp"
                 tools:ignore="TextSizeCheck" />
@@ -98,7 +103,7 @@
                 android:layout_marginTop="10px"
                 android:layout_marginBottom="10px"
                 android:layout_weight="1"
-                android:text="@string/textViewApellidoM"
+                android:text="@string/TextApellidoM"
                 android:textColor="@color/MarronOscuro"
                 android:textSize="20sp"
                 tools:ignore="TextSizeCheck" />
@@ -125,7 +130,7 @@
                 android:layout_marginTop="10px"
                 android:layout_marginBottom="10px"
                 android:layout_weight="1"
-                android:text="@string/textViewCodUsuario"
+                android:text="@string/TextUsuario"
                 android:textColor="@color/MarronOscuro"
                 android:textSize="20sp" />
 
@@ -152,7 +157,7 @@
                 android:layout_marginTop="10px"
                 android:layout_marginBottom="10px"
                 android:layout_weight="1"
-                android:text="@string/textViewContraseña"
+                android:text="@string/TextContraseña"
                 android:textColor="@color/MarronOscuro"
                 android:textSize="20sp" />
 
@@ -170,41 +175,48 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:layout_marginRight="30px"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="PxUsage,RtlHardcoded">
-
-        <Button
-            android:id="@+id/btnRegresar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10px"
-            android:layout_weight="1"
-            android:backgroundTint="@color/MarronOscuro"
-            android:onClick="enviarLogin"
-            android:text="@string/btn_regresar"
-            tools:ignore="ButtonStyle" />
-
-        <Button
-            android:id="@+id/btnRegistrar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/MarronOscuro"
-            android:text="@string/btn_registrar"
-            tools:ignore="ButtonStyle" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100px"
-        android:background="@drawable/logo"
-        android:orientation="horizontal"
-        tools:ignore="PxUsage"></LinearLayout>
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="133dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/MarronOscuro"
+        android:onClick="enviarLogin"
+        android:text="@string/Btnregresar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnRegistrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="ButtonStyle" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="80dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/MarronOscuro"
+        android:text="@string/Btnregistrar"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnRegresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnRegresar"
+        tools:ignore="ButtonStyle" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

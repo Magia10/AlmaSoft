@@ -1,24 +1,30 @@
 <resources>
     <string name="app_name">AlmaSoft</string>
-    <string name="lbl_InicioSesion">Inicio de Sesión</string>
-    <string name="lbl_AunRegistrado">¿Aún no estas registrado?</string>
-    <string name="textViewRegistrarUsuario">Registro de Usuario</string>
-    <string name="textViewNombre">Nombre: </string>
-    <string name="textViewApellidoM">Apellido Materno: </string>
-    <string name="textViewApellidoP">Apellido Paterno: </string>
-    <string name="textViewCodUsuario">Usuario: </string>
-    <string name="textViewContraseña">Contraseña: </string>
-    <string name="txt_usuario">Usuario</string>
-    <string name="txt_contraseña">Contraseña</string>
+
+    <string name="TextInicioSesion">Inicio de Sesión</string>
+    <string name="TextUsuario">Usuario</string>
+    <string name="TextContraseña">Contraseña</string>
+    <string name="TextAunRegistrado">¿Aún no estas registrado?</string>
+    <string name="TextRegistrarse">Registrarse Ahora!</string>
+
+    <string name="TextRegistrarUsuario">Registro de Usuario</string>
+    <string name="TextNombre">Nombre: </string>
+    <string name="TextApellidoM">Apellido Materno: </string>
+    <string name="TextApellidoP">Apellido Paterno: </string>
+
+    <string name="TextProductoNuevo">NUEVO PRODUCTO</string>
+
+
     <string name="rb1">Masculino</string>
     <string name="rb2">Femenino</string>
     <string name="check1">Fútbol</string>
     <string name="check2">Voley</string>
-    <string name="btn_ingresar">Iniciar Sesión</string>
-    <string name="btn_regresar">Regresar</string>
-    <string name="btn_registrar">Registrar</string>
-    <string name="btn_reiniciar">Reiniciar</string>
-    <string name="lbl_registrarse">Registrarse Ahora!</string>
+
+    <string name="BtnIngresar">Iniciar Sesión</string>
+    <string name="Btnregresar">Regresar</string>
+    <string name="Btnregistrar">Registrar</string>
+    <string name="Btnreiniciar">Reiniciar</string>
+
     <string name="IB">Información</string>
     <string-array name="location_array">
         <item>Almacén 1</item>
