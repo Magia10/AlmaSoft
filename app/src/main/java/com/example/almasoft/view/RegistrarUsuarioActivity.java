@@ -8,11 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.almasoft.R;
 import com.example.almasoft.database.AdminBD;
@@ -20,58 +16,56 @@ import com.example.almasoft.model.Usuario;
 
 public class RegistrarUsuarioActivity extends AppCompatActivity {
     private Button btnRegistrar;
-    private EditText txt_Nombre,txt_ApellidoP,txt_ApellidoM,txt_CodUsuario,txt_Password;
+    private EditText txt_Nombre, txt_ApellidoP, txt_ApellidoM, txt_CodUsuario, txt_Password;
 
-    private String nombre,apellidoP,apellidoM,codUsuario,password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_registrar_usuario);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        // Referencias a los elementos de la interfaz
         btnRegistrar = findViewById(R.id.btnRegistrar);
         txt_Nombre = findViewById(R.id.txtNombre);
         txt_ApellidoP = findViewById(R.id.txtApellidoP);
         txt_ApellidoM = findViewById(R.id.txtApellidoM);
         txt_CodUsuario = findViewById(R.id.txtUsuario);
         txt_Password = findViewById(R.id.txtPassword);
+
+        // Configuración del botón registrar
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AdminBD adminBD = new AdminBD(getApplicationContext());
-                SQLiteDatabase database = adminBD.getWritableDatabase();
-                obtenerDatos();
-                if(!nombre.isEmpty() && !apellidoP.isEmpty() && !apellidoM.isEmpty() && !codUsuario.isEmpty() && !password.isEmpty()) {
-                    adminBD.guardarUsuario(database, new Usuario(
+                // Validación de campos
+                if (validarCampos()) {
+                    // Obtener instancia de la base de datos
+                    AdminBD adminBD = new AdminBD(getApplicationContext());
+                    SQLiteDatabase database = adminBD.getWritableDatabase();
+
+                    // Guardar usuario en la base de datos
+                    long resultado = adminBD.guardarUsuario(new Usuario(
                             txt_Nombre.getText().toString(),
                             txt_ApellidoP.getText().toString(),
                             txt_ApellidoM.getText().toString(),
                             txt_CodUsuario.getText().toString(),
                             txt_Password.getText().toString()));
 
-                    Toast.makeText(getApplicationContext(), "Se agrego correctamente el registro!", Toast.LENGTH_SHORT).show();
-                    limpiar();
-                }else{
-                    Toast.makeText(getApplicationContext(), "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+                    // Comprobar si se insertó correctamente
+                    if (resultado != -1) {
+                        Toast.makeText(getApplicationContext(), "Se agregó correctamente el registro", Toast.LENGTH_SHORT).show();
+                        limpiarCampos();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Error al guardar el usuario", Toast.LENGTH_SHORT).show();
+                    }
+
+                    // Cerrar la base de datos
+                    adminBD.close();
                 }
             }
         });
-
-
-
     }
 
-    //Metodo para el btnRegresar del registro a usuario
-    public void enviarLogin(View view) {
-        Intent i = new Intent(this, LoginActivity.class);
-        startActivity(i);
-    }
-
-    public void limpiar(){
+    // Método para limpiar los campos después de registrar un usuario
+    private void limpiarCampos() {
         txt_Nombre.setText("");
         txt_ApellidoP.setText("");
         txt_ApellidoM.setText("");
@@ -80,13 +74,25 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
         txt_Nombre.requestFocus();
     }
 
-    public void obtenerDatos(){
-        nombre = txt_Nombre.getText().toString();
-        apellidoP = txt_ApellidoP.getText().toString();
-        apellidoM= txt_ApellidoM.getText().toString();
-        codUsuario=txt_CodUsuario.getText().toString();
-        password= txt_Password.getText().toString();
+    // Método para validar que todos los campos estén llenos
+    private boolean validarCampos() {
+        String nombre = txt_Nombre.getText().toString().trim();
+        String apellidoP = txt_ApellidoP.getText().toString().trim();
+        String apellidoM = txt_ApellidoM.getText().toString().trim();
+        String codUsuario = txt_CodUsuario.getText().toString().trim();
+        String password = txt_Password.getText().toString().trim();
+
+        if (nombre.isEmpty() || apellidoP.isEmpty() || apellidoM.isEmpty() || codUsuario.isEmpty() || password.isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
     }
 
-
+    // Método para regresar al LoginActivity
+    public void enviarLogin(View view) {
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
+        finish(); // Terminar la actividad actual para evitar volver atrás
+    }
 }
