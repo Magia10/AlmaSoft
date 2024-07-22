@@ -104,7 +104,7 @@
         android:layout_marginBottom="60dp"
         android:layout_weight="1"
         android:backgroundTint="@color/MarronOscuro"
-        android:onClick="enviarLogin"
+        android:onClick="enviarListarProducto"
         android:text="@string/Btnregresar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_add"

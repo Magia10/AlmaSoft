@@ -13,7 +13,16 @@
     <string name="TextApellidoP">Apellido Paterno: </string>
 
     <string name="TextProductoNuevo">NUEVO PRODUCTO</string>
+    <string name="TextProvedorNuevo">NUEVO PROVEEDOR</string>
+    <string name="TextProvedorRuc">Ruc</string>
+    <string name="TextProvedorDir">Direccion</string>
+    <string name="TextProveedorCuidad">Ciudad</string>
 
+    <string name="TextListarProvedor">LISTAR PROVEEDOR</string>
+    <string name="TexNombreCodigo">Codigo o nombre</string>
+
+    <string name="TexProducto">PRODUCTO</string>
+    <string name="TexProveedor">PROVEEDOR</string>
 
     <string name="rb1">Masculino</string>
     <string name="rb2">Femenino</string>
@@ -22,6 +31,7 @@
 
     <string name="BtnIngresar">Iniciar Sesión</string>
     <string name="Btnregresar">Regresar</string>
+    <string name="BtnBuscar">Buscar</string>
     <string name="Btnregistrar">Registrar</string>
     <string name="Btnreiniciar">Reiniciar</string>
 
