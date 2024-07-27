@@ -12,18 +12,18 @@ import com.example.almasoft.R;
 import com.example.almasoft.model.Product;
 import com.example.almasoft.viewmodel.ProductViewModel;
 
-public class ProductActivity extends AppCompatActivity {
+public class ProductRecordActivity extends AppCompatActivity {
     private ProductViewModel productViewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product);
+        setContentView(R.layout.activity_product_record);
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
-        final ProductAdapter adapter = new ProductAdapter(ProductActivity.this);
+        final ProductAdapter adapter = new ProductAdapter(ProductRecordActivity.this);
         recyclerView.setAdapter(adapter);
 
         productViewModel = new ViewModelProvider(this).get(ProductViewModel.class);
@@ -47,7 +47,7 @@ public class ProductActivity extends AppCompatActivity {
 
     // Método para ir a Registrar
     private void addProduct() {
-        Intent i = new Intent(this, CreateProductActivity.class);
+        Intent i = new Intent(this, ProductCreateActivity.class);
         startActivity(i);
     }
 

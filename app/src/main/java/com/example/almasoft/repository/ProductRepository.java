@@ -38,6 +38,10 @@ public class ProductRepository {
         return allProducts;
     }
 
+    public LiveData<Product> getProductById(int id) {
+        return productDao.getProductById(id);
+    }
+
     private static class InsertProductAsyncTask extends AsyncTask<Product, Void, Void> {
         private ProductDao productDao;
 

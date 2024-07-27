@@ -13,25 +13,28 @@
         android:theme="@style/Theme.AlmaSoft"
         tools:targetApi="31">
         <activity
-            android:name=".view.RecordProductActivity"
+            android:name=".view.SupplierActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ProductInboundActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ProductOutboundActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ProductHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ProductRecordActivity"
             android:exported="false" />
         <activity
             android:name=".view.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".view.CreateProductActivity"
+            android:name=".view.ProductCreateActivity"
             android:exported="false" />
         <activity
-            android:name=".editarProducto"
-            android:exported="false" />
-        <activity
-            android:name=".editprodut"
-            android:exported="false" />
-        <activity
-            android:name=".view.ProductActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.MainActivity"
+            android:name=".view.ProductRecordActivity"
             android:exported="false" />
         <activity
             android:name=".view.RegistrarUsuarioActivity"

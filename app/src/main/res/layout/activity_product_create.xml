@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo2"
-    tools:context=".view.CreateProductActivity">
+    tools:context=".view.ProductCreateActivity">
 
     <EditText
         android:id="@+id/edit_text_name"
@@ -104,7 +104,7 @@
         android:layout_marginBottom="60dp"
         android:layout_weight="1"
         android:backgroundTint="@color/MarronOscuro"
-        android:onClick="enviarListarProducto"
+        android:onClick="back"
         android:text="@string/Btnregresar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_add"

@@ -6,12 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.almasoft.R;
 import com.example.almasoft.model.Product;
@@ -24,7 +23,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
     private List<Product> products = new ArrayList<>();
     private OnItemClickListener listener;
     private Context context;
-
+    private ProductViewModel productViewModel;
 
     @NonNull
     @Override
@@ -46,19 +45,21 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
         holder.tvLocation.setText(currentProduct.getAddress());
         holder.tvQuantity.setText(String.valueOf(currentProduct.getQuantity()));
 
+        productViewModel = new ViewModelProvider((ViewModelStoreOwner) context).get(ProductViewModel.class);
+
         holder.buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //editTextName.setText(currentProduct.getName());
-                //editTextPrice.setText(String.valueOf(currentProduct.getSalePrice()));
-                Toast.makeText(context, "Botón presionado!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, ProductCreateActivity.class);
+                intent.putExtra("productId", 1);
+                context.startActivity(intent);
             }
         });
 
         holder.buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                productViewModel.delete(currentProduct);
             }
         });
     }

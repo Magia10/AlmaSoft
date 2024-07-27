@@ -14,8 +14,9 @@ public class Product {
     private int quantity;
 
     // Constructor, getters y setters
+
     public Product(String name, double salePrice,double purchasePrice,String brand,
-    String address,int quantity) {
+        String address,int quantity) {
         this.name = name;
         this.salePrice = salePrice;
         this.purchasePrice = purchasePrice;

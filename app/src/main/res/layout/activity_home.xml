@@ -15,7 +15,7 @@
         android:layout_marginBottom="165dp"
         android:contentDescription="Logo de la aplicación"
         android:src="@drawable/home"
-        app:layout_constraintBottom_toTopOf="@+id/buttonProdcutor"
+        app:layout_constraintBottom_toTopOf="@+id/btnProduct"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,13 +28,13 @@
         android:text="Bienvenido a AlmaSoft"
         android:textColor="@android:color/black"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonProveedor"
+        app:layout_constraintBottom_toTopOf="@+id/btnSupplier"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
 
     <Button
-        android:id="@+id/buttonProdcutor"
+        android:id="@+id/btnProduct"
         android:layout_width="165dp"
         android:layout_height="153dp"
         android:layout_marginStart="41dp"
@@ -43,12 +43,12 @@
         android:background="@drawable/icoprod"
         android:contentDescription="Botón de productos"
         app:layout_constraintBottom_toTopOf="@+id/textViewProducto"
-        app:layout_constraintEnd_toStartOf="@+id/buttonProveedor"
+        app:layout_constraintEnd_toStartOf="@+id/btnSupplier"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
 
     <Button
-        android:id="@+id/buttonProveedor"
+        android:id="@+id/btnSupplier"
         android:layout_width="152dp"
         android:layout_height="148dp"
         android:layout_marginEnd="60dp"
@@ -57,7 +57,7 @@
         android:contentDescription="Botón de productos"
         app:layout_constraintBottom_toTopOf="@+id/textViewProveedor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonProdcutor"
+        app:layout_constraintStart_toEndOf="@+id/btnProduct"
         app:layout_constraintTop_toBottomOf="@+id/textViewHome" />
 
     <TextView
@@ -72,7 +72,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewProducto"
-        app:layout_constraintTop_toBottomOf="@+id/buttonProveedor" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSupplier" />
 
     <TextView
         android:id="@+id/textViewProducto"
@@ -86,7 +86,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textViewProveedor"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonProdcutor" />
+        app:layout_constraintTop_toBottomOf="@+id/btnProduct" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
