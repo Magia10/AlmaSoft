@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo2"
+    tools:context=".view.ListadoProveedoresActivity">
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="36dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/MarronOscuro"
+        android:text="@string/Btnregistrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnRegresar"
+        app:layout_constraintTop_toBottomOf="@+id/listViewProveedores"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="ButtonStyle" />
+
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="37dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/MarronOscuro"
+        android:text="@string/Btnregresar"
+        app:layout_constraintEnd_toStartOf="@+id/btnRegistrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listViewProveedores"
+        tools:ignore="ButtonStyle" />
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="271dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/MarronOscuro"
+        android:text="@string/BtnBuscar"
+        app:layout_constraintBottom_toTopOf="@+id/listViewProveedores"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etBuscar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VisualLintButtonSize" />
+
+    <EditText
+        android:id="@+id/etBuscar"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="15dp"
+        android:autofillHints=""
+        android:hint="@string/TexNombreCodigo"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/listViewProveedores"
+        app:layout_constraintEnd_toStartOf="@+id/btnBuscar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="TextFields" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="98dp"
+        android:text="@string/TextListarProvedor"
+        android:textAlignment="center"
+        android:textColor="@color/MarronOscuro"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/etBuscar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="PxUsage" />
+
+    <ListView
+        android:id="@+id/listViewProveedores"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="105dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBuscar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

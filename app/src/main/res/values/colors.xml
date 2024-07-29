@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="MarronOscuro">#4D362F</color>
     <color name="fondo">#FEFEFE</color>
+    <color name="background_color">#F5F5F5</color>
+    <color name="primary_text">#333333</color>
+    <color name="button_color">#6200EE</color>
 </resources>

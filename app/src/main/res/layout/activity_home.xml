@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo2"
+    tools:context=".view.HomeActivity">
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="165dp"
+        android:contentDescription="Logo de la aplicación"
+        android:src="@drawable/home"
+        app:layout_constraintBottom_toTopOf="@+id/buttonProdcutor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="105dp"
+        android:text="Bienvenido a AlmaSoft"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonProveedor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
+
+    <Button
+        android:id="@+id/buttonProdcutor"
+        android:layout_width="165dp"
+        android:layout_height="153dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/icoprod"
+        android:contentDescription="Botón de productos"
+        app:layout_constraintBottom_toTopOf="@+id/textViewProducto"
+        app:layout_constraintEnd_toStartOf="@+id/buttonProveedor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
+
+    <Button
+        android:id="@+id/buttonProveedor"
+        android:layout_width="152dp"
+        android:layout_height="148dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/proveedor"
+        android:contentDescription="Botón de proveedores"
+        app:layout_constraintBottom_toTopOf="@+id/textViewProveedor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonProdcutor"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHome" />
+
+    <TextView
+        android:id="@+id/textViewProveedor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="235dp"
+        android:text="@string/TexProveedor"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewProducto"
+        app:layout_constraintTop_toBottomOf="@+id/buttonProveedor" />
+
+    <TextView
+        android:id="@+id/textViewProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="246dp"
+        android:text="@string/TexProducto"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textViewProveedor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonProdcutor" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
