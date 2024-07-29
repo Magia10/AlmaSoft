@@ -12,15 +12,42 @@
         android:layout_width="105dp"
         android:layout_height="57dp"
         android:layout_marginTop="175dp"
-        android:layout_marginBottom="55dp"
+        android:layout_marginBottom="5dp"
         android:text="PRODUCTOS"
         android:textColor="@android:color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/recycler_view"
+        app:layout_constraintBottom_toTopOf="@+id/filter_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/filter_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/recycler_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewProducto"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/editTextFilter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Buscar productos"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/buttonFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filtrar"
+            android:backgroundTint="@color/MarronOscuro" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnRegresar"
@@ -41,7 +68,7 @@
 
     <Button
         android:id="@+id/button_add"
-        android:layout_width="0dp"
+        android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -57,13 +84,12 @@
         android:id="@+id/recycler_view"
         android:layout_width="373dp"
         android:layout_height="0dp"
-        android:layout_below="@+id/button_add"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginBottom="19dp"
-        android:padding="16dp"
+        android:padding="8dp"
         app:layout_constraintBottom_toTopOf="@+id/btnRegresar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewProducto"
+        app:layout_constraintTop_toBottomOf="@+id/filter_container"
         app:layout_constraintVertical_bias="0.7" />
 
     <ImageView

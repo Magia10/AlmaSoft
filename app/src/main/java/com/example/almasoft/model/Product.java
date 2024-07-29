@@ -12,6 +12,7 @@ public class Product {
     private String brand;
     private String address;
     private int quantity;
+    private int state;
 
     // Constructor, getters y setters
 
@@ -23,6 +24,7 @@ public class Product {
         this.brand = brand;
         this.address = address;
         this.quantity = quantity;
+        this.state = 1;
     }
 
     public int getId() {
@@ -79,5 +81,13 @@ public class Product {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
     }
 }

@@ -25,7 +25,7 @@ public interface ProductDao {
     @Query("DELETE FROM product_table")
     void deleteAllProducts();
 
-    @Query("SELECT * FROM product_table ORDER BY name ASC")
+    @Query("SELECT * FROM product_table WHERE state = 1 ORDER BY name ASC")
     LiveData<List<Product>> getAllProducts();
 
     @Query("SELECT * FROM product_table WHERE id = :filter")

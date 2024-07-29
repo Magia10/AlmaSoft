@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.almasoft.R;
@@ -27,6 +28,7 @@ public class ProductCreateActivity extends AppCompatActivity {
     private ProductViewModel productViewModel;
     private Product product;
     private int productId;
+    private TextView tvTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class ProductCreateActivity extends AppCompatActivity {
         editTextPurchasePrice = findViewById(R.id.edit_text_purchase_price);
         editTextPublicPrice = findViewById(R.id.edit_text_public_price);
         spinnerLocation = findViewById(R.id.spinner_location);
+        tvTitle = findViewById(R.id.textViewProducto);
         buttonAdd = findViewById(R.id.button_add);
 
         Intent intent = getIntent();
@@ -52,6 +55,8 @@ public class ProductCreateActivity extends AppCompatActivity {
         productViewModel = new ViewModelProvider(this).get(ProductViewModel.class);
 
         if(productId != -1){
+            tvTitle.setText("Actualizar Producto");
+            buttonAdd.setText("Actualizar");
             productViewModel.getProductById(productId).observe(this, new Observer<Product>() {
                 @Override
                 public void onChanged(Product _product) {
@@ -68,7 +73,6 @@ public class ProductCreateActivity extends AppCompatActivity {
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String name = editTextName.getText().toString();
                 String brand = editTextBrand.getText().toString();
                 String quantity = editTextQuantity.getText().toString();
@@ -76,24 +80,30 @@ public class ProductCreateActivity extends AppCompatActivity {
                 String salePrice = editTextPublicPrice.getText().toString();
                 String location = spinnerLocation.getSelectedItem().toString();
 
-                if(productId != -1){
-                    product.setName(name);
-                    product.setBrand(brand);
-                    product.setQuantity(Integer.parseInt(quantity));
-                    product.setSalePrice(Double.parseDouble(salePrice));
-                    product.setPurchasePrice(Double.parseDouble(purchasePrice));
-                    product.setAddress(location);
-                    productViewModel.update(product);
-
-                    Intent intent = new Intent(ProductCreateActivity.this, ProductRecordActivity.class);
-                    startActivity(intent);
+                if(name.isEmpty() || brand.isEmpty() || quantity.isEmpty() || purchasePrice.isEmpty()
+                        || salePrice.isEmpty() || location.isEmpty()){
+                    Toast.makeText(ProductCreateActivity.this, "Ingresar datos faltantes", Toast.LENGTH_SHORT).show();
                 }else{
-                    productViewModel.insert(new Product(name,Double.parseDouble(salePrice),
-                            Double.parseDouble(purchasePrice),brand,location,Integer.parseInt(quantity)));
-                }
+                    if(productId != -1){
+                        product.setName(name);
+                        product.setBrand(brand);
+                        product.setQuantity(Integer.parseInt(quantity));
+                        product.setSalePrice(Double.parseDouble(salePrice));
+                        product.setPurchasePrice(Double.parseDouble(purchasePrice));
+                        product.setAddress(location);
+                        productViewModel.update(product);
 
-                cleanInputs();
-                Toast.makeText(ProductCreateActivity.this, "Producto agregado: " + name, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ProductCreateActivity.this, "Producto actualizado: " + name, Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(ProductCreateActivity.this, ProductRecordActivity.class);
+                        startActivity(intent);
+                    }else{
+                        productViewModel.insert(new Product(name,Double.parseDouble(salePrice),
+                                Double.parseDouble(purchasePrice),brand,location,Integer.parseInt(quantity)));
+                        Toast.makeText(ProductCreateActivity.this, "Producto agregado: " + name, Toast.LENGTH_SHORT).show();
+                    }
+
+                    cleanInputs();
+                }
             }
         });
     }

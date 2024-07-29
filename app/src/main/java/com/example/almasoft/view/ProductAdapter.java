@@ -57,7 +57,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
         holder.buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                productViewModel.delete(currentProduct);
+                currentProduct.setState(0);
+                productViewModel.update(currentProduct);
             }
         });
 

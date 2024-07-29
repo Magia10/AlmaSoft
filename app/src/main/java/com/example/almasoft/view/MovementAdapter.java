@@ -82,16 +82,4 @@ public class MovementAdapter extends RecyclerView.Adapter<MovementAdapter.Moveme
         movements = newMovements;
         notifyDataSetChanged();
     }
-
-    class MovementViewHolder extends RecyclerView.ViewHolder {
-        // Define your ViewHolder
-
-        public MovementViewHolder(View itemView) {
-            super(itemView);
-        }
-
-        public void bind(Movement movement) {
-            // Bind data to your views
-        }
-    }
 }
