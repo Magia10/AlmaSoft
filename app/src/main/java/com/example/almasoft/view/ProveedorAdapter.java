@@ -45,10 +45,10 @@ public class ProveedorAdapter extends BaseAdapter {
 
         Proveedor proveedor = proveedores.get(position);
 
-        TextView tvNombre = convertView.findViewById(R.id.TxtNombre);
-        TextView tvRuc = convertView.findViewById(R.id.TxtRuc);
-        TextView tvDireccion = convertView.findViewById(R.id.TxtDireccion);
-        TextView tvCiudad = convertView.findViewById(R.id.TxtCiudad);
+        TextView tvNombre = convertView.findViewById(R.id.TextNombre);
+        TextView tvRuc = convertView.findViewById(R.id.TextRuc);
+        TextView tvDireccion = convertView.findViewById(R.id.TextDireccion);
+        TextView tvCiudad = convertView.findViewById(R.id.TextCiudad);
 
         tvNombre.setText(proveedor.getNombre());
         tvRuc.setText(proveedor.getRuc());
