@@ -45,7 +45,7 @@
             android:name=".view.RegistrarUsuarioActivity"
             android:exported="false" />
 
-        <!-- Nueva Actividad -->
+        <!-- Actividad Proveedor-->
 
         <activity
             android:name=".view.ListadoProveedoresActivity"
@@ -53,6 +53,10 @@
         <activity
             android:name=".view.RegistrarProveedorActivity"
             android:exported="false" />
+        <activity
+            android:name=".view.EditarProveedorActivity"
+            android:exported="false"/>
+
 
 
         <!-- Actividad de inicio -->
