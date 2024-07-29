@@ -38,6 +38,7 @@ public class ProveedorAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        /*
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_proveedor, parent, false);
         }
@@ -53,7 +54,7 @@ public class ProveedorAdapter extends BaseAdapter {
         tvRuc.setText(proveedor.getRuc());
         tvDireccion.setText(proveedor.getDireccion());
         tvCiudad.setText(proveedor.getCiudad());
-
+        */
         return convertView;
     }
 }

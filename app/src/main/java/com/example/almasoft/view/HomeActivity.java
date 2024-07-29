@@ -15,7 +15,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         Button btnProduct = findViewById(R.id.btnProduct);
-        Button btnSupplier = findViewById(R.id.btnSupplier);
+
         btnProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
