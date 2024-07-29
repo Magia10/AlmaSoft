@@ -1,0 +1,6 @@
+<resources>
+    <string-array name="movimientos_array">
+        <item>Entradas</item>
+        <item>Salidas</item>
+    </string-array>
+</resources>

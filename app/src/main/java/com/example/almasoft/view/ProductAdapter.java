@@ -5,9 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStoreOwner;
@@ -15,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.almasoft.R;
 import com.example.almasoft.model.Product;
 import com.example.almasoft.viewmodel.ProductViewModel;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,6 +60,24 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
                 productViewModel.delete(currentProduct);
             }
         });
+
+        holder.btnInbound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ProductInboundActivity.class);
+                intent.putExtra("productId", currentProduct.getId());
+                context.startActivity(intent);
+            }
+        });
+
+        holder.btnOutbound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ProductOutboundActivity.class);
+                intent.putExtra("productId", currentProduct.getId());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -75,7 +91,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
     }
 
     class ProductHolder extends RecyclerView.ViewHolder {
-        private Button buttonEdit, buttonDelete;
+        private ImageButton buttonEdit, buttonDelete, btnInbound, btnOutbound;
 
         private TextView tvName, tvSalePrice,tvPurchasePrice, tvBrand, tvLocation, tvQuantity;
 
@@ -88,8 +104,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
             tvLocation = itemView.findViewById(R.id.tvLocation);
             tvQuantity = itemView.findViewById(R.id.tvQuantity);
 
-            buttonEdit = itemView.findViewById(R.id.button_edit);
-            buttonDelete = itemView.findViewById(R.id.button_delete);
+            buttonEdit = itemView.findViewById(R.id.btnEdit);
+            buttonDelete = itemView.findViewById(R.id.btnDelete);
+            btnInbound = itemView.findViewById(R.id.btnInbound);
+            btnOutbound = itemView.findViewById(R.id.btnOutbound);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

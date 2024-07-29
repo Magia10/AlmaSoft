@@ -21,6 +21,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        Intent i = new Intent(this, HomeActivity.class);
+        startActivity(i);
+
         adminBD = new AdminBD(this);
 
         editTextUsername = findViewById(R.id.txtUsuario);
@@ -32,7 +35,6 @@ public class LoginActivity extends AppCompatActivity {
         String password = editTextPassword.getText().toString().trim();
 
         if (adminBD.validarUsuario(username, password)) {
-            // Usuario válido, procede al HomeActivity
             Intent i = new Intent(this, HomeActivity.class);
             startActivity(i);
         } else {
