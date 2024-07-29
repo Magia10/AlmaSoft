@@ -17,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.almasoft.R;
 import com.example.almasoft.database.AdminBD;
+import com.example.almasoft.view.HomeActivity;
 
 public class LoginActivity extends AppCompatActivity {
     private TextView lblRegistrarse;
@@ -79,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void enviarMain(){
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, HomeActivity.class);
         startActivity(i);
     }
 
