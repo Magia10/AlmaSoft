@@ -148,4 +148,36 @@ public class AdminBD extends SQLiteOpenHelper {
                 null
         );
     }
+
+    public int actualizarProveedor(Proveedor proveedor) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(ProveedorContract.ProveedorEntry.NOMBRE, proveedor.getNombre());
+        values.put(ProveedorContract.ProveedorEntry.RUC, proveedor.getRuc());
+        values.put(ProveedorContract.ProveedorEntry.DIRECCION, proveedor.getDireccion());
+        values.put(ProveedorContract.ProveedorEntry.CIUDAD, proveedor.getCiudad());
+
+        String selection = ProveedorContract.ProveedorEntry.ID + " = ?";
+        String[] selectionArgs = {String.valueOf(proveedor.getId())};
+
+        int count = db.update(
+                ProveedorContract.ProveedorEntry.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs
+        );
+
+        db.close();
+        return count;
+    }
+
+    public int eliminarProveedor(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String selection = ProveedorContract.ProveedorEntry.ID + " = ?";
+        String[] selectionArgs = {String.valueOf(id)};
+
+        int count = db.delete(ProveedorContract.ProveedorEntry.TABLE_NAME, selection, selectionArgs);
+        db.close();
+        return count;
+    }
 }
