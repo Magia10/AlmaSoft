@@ -109,6 +109,8 @@ public class ProductCreateActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
+        Intent intent = new Intent(this, ProductRecordActivity.class);
+        startActivity(intent);
         finish();
     }
 

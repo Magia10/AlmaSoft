@@ -32,10 +32,6 @@ public class ProductRepository {
         new DeleteProductAsyncTask(productDao).execute(product);
     }
 
-    public void deleteAllProducts() {
-        new DeleteAllProductsAsyncTask(productDao).execute();
-    }
-
     public LiveData<List<Product>> getAllProducts() {
         return allProducts;
     }
@@ -86,17 +82,4 @@ public class ProductRepository {
         }
     }
 
-    private static class DeleteAllProductsAsyncTask extends AsyncTask<Void, Void, Void> {
-        private ProductDao productDao;
-
-        private DeleteAllProductsAsyncTask(ProductDao productDao) {
-            this.productDao = productDao;
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            productDao.deleteAllProducts();
-            return null;
-        }
-    }
 }

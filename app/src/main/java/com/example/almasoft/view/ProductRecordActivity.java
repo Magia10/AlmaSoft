@@ -109,6 +109,8 @@ public class ProductRecordActivity extends AppCompatActivity {
     }
 
     public void enviarHome(View view) {
+        Intent intent = new Intent(this, ProductHomeActivity.class);
+        startActivity(intent);
         finish();
     }
 }
