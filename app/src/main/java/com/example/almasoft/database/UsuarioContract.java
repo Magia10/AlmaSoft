@@ -5,7 +5,9 @@ import android.provider.BaseColumns;
 public class UsuarioContract {
 
     public static abstract class UsuarioEntry implements BaseColumns{
-        //PLANTILLA DE LA TABLA USUARIOS
+        //PLANTILLA PARA CREAR LA TABLA USUARIOS
+        //Las clases abstractas es un modelo para crear más clases
+        //BaseColumns es el miniadministrador de la BD 
         public static final String TABLE_NAME = "usuario";
         public static final String ID="id";
         public static final String NOMBRE="nombre";

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/fondo"
     android:orientation="vertical"
-    tools:context=".vista.RegistrarUsuarioActivity">
+    tools:context=".vista.ActualizarActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50px"
         android:layout_marginBottom="50px"
-        android:text="@string/textViewRegistrarUsuario"
+        android:text="@string/textViewActualizarUsuario"
         android:textAlignment="center"
         android:textColor="@color/MarronOscuro"
         android:textSize="48sp"
@@ -30,6 +30,33 @@
         android:layout_marginBottom="50px"
         android:orientation="vertical"
         tools:ignore="PxUsage">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="Ingresa el ID a ACTUALIZAR: "
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/txtID_Act"
+                android:layout_width="222dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                tools:ignore="Autofill,InefficientWeight,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -184,7 +211,7 @@
             android:layout_marginRight="10px"
             android:layout_weight="1"
             android:backgroundTint="@color/MarronOscuro"
-            android:onClick="enviarGestion"
+            android:onClick="enviarGestionUsuario"
             android:text="@string/btn_regresar"
             tools:ignore="ButtonStyle" />
 
@@ -194,7 +221,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/MarronOscuro"
-            android:text="@string/btn_registrar"
+            android:text="@string/btn_actualizar"
             tools:ignore="ButtonStyle" />
 
     </LinearLayout>

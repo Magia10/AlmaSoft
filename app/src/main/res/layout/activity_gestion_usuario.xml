@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".vista.GestionUsuarioActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50px"
+        android:layout_marginBottom="50px"
+        android:text="@string/textViewGestionarUsuario"
+        android:textAlignment="center"
+        android:textColor="@color/MarronOscuro"
+        android:textSize="48sp"
+        tools:ignore="PxUsage" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="50px"
+        android:layout_marginRight="30px"
+        android:layout_marginBottom="50px"
+        android:orientation="vertical"
+        tools:ignore="PxUsage" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="269dp"
+        android:layout_marginTop="5px"
+        android:background="@drawable/usuario"
+        android:orientation="horizontal"
+        tools:ignore="PxUsage"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="30px"
+        android:orientation="horizontal"
+        tools:ignore="PxUsage,RtlHardcoded">
+
+        <Button
+            android:id="@+id/btnEliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10px"
+            android:layout_weight="1"
+            android:backgroundTint="@color/MarronOscuro"
+            android:onClick="enviarEliminar"
+            android:text="@string/btn_eliminar"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/btnActualizar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10px"
+            android:layout_weight="1"
+            android:backgroundTint="@color/MarronOscuro"
+            android:onClick="enviarActualizar"
+            android:text="@string/btn_actualizar"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/btnActualizar_Act"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/MarronOscuro"
+            android:onClick="enviarRegistarUsuario"
+            android:text="@string/btn_registrar"
+            tools:ignore="ButtonStyle" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="30px"
+        android:orientation="horizontal"
+        tools:ignore="PxUsage,RtlHardcoded">
+
+
+        <Button
+            android:id="@+id/btnRegresar_Act"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10px"
+            android:layout_weight="1"
+            android:backgroundTint="@color/MarronOscuro"
+            android:onClick="enviarLogin"
+            android:text="@string/btn_regresar"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/btnConsultar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10px"
+            android:layout_weight="1"
+            android:backgroundTint="@color/MarronOscuro"
+            android:onClick="enviarConsulta"
+            android:text="@string/btn_consultar"
+            tools:ignore="ButtonStyle" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100px"
+        android:background="@drawable/logo"
+        android:orientation="horizontal"
+        tools:ignore="PxUsage">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"></LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

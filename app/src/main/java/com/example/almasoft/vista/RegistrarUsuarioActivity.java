@@ -33,12 +33,12 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        btnRegistrar = findViewById(R.id.btnRegistrar);
-        txt_Nombre = findViewById(R.id.txtNombre);
-        txt_ApellidoP = findViewById(R.id.txtApellidoP);
-        txt_ApellidoM = findViewById(R.id.txtApellidoM);
-        txt_CodUsuario = findViewById(R.id.txtUsuario);
-        txt_Password = findViewById(R.id.txtPassword);
+        btnRegistrar = findViewById(R.id.btnActualizar_Act);
+        txt_Nombre = findViewById(R.id.txtNombre_Act);
+        txt_ApellidoP = findViewById(R.id.txtApellidoP_Act);
+        txt_ApellidoM = findViewById(R.id.txtApellidoM_Act);
+        txt_CodUsuario = findViewById(R.id.txtUsuario_Login);
+        txt_Password = findViewById(R.id.txtPassword_Act);
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,5 +88,9 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
         password= txt_Password.getText().toString();
     }
 
-
+    //Metodo para el btnGestion
+    public void enviarGestion(View view){
+        Intent i = new Intent(this, GestionUsuarioActivity.class);
+        startActivity(i);
+    }
 }

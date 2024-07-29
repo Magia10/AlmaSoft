@@ -62,6 +62,7 @@ public class Usuario {
         this.password = password;
     }
 
+    //el contenedor es un objeto que va contener valores
     public ContentValues toContentValues(){
         ContentValues contenedor = new ContentValues();
         contenedor.put(UsuarioContract.UsuarioEntry.NOMBRE, nombre);
