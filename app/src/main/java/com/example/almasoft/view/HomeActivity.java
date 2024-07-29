@@ -23,10 +23,12 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btnSupplier.setOnClickListener(new View.OnClickListener(){
+
+        Button buttonProveedor = findViewById(R.id.buttonProveedor);
+        buttonProveedor.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                Intent intent = new Intent(HomeActivity.this, SupplierActivity.class);
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, ListadoProveedoresActivity.class);
                 startActivity(intent);
             }
         });
