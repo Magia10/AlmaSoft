@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlmaSoft"
         tools:targetApi="31">
+
+        <!-- Actividades existentes -->
         <activity
             android:name=".view.RecordProductActivity"
             android:exported="false" />
@@ -36,15 +38,27 @@
         <activity
             android:name=".view.RegistrarUsuarioActivity"
             android:exported="false" />
+
+        <!-- Nueva Actividad -->
+
+        <activity
+            android:name=".view.ListadoProveedoresActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.RegistrarProveedorActivity"
+            android:exported="false" />
+
+
+        <!-- Actividad de inicio -->
         <activity
             android:name=".view.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
