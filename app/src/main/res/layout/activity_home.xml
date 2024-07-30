@@ -11,33 +11,37 @@
         android:id="@+id/logoImageView"
         android:layout_width="100dp"
         android:layout_height="0dp"
-        android:layout_marginTop="0dp"
         android:layout_marginBottom="165dp"
         android:contentDescription="Logo de la aplicación"
         android:src="@drawable/home"
         app:layout_constraintBottom_toTopOf="@+id/btnProduct"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textViewHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="105dp"
         android:text="Bienvenido a AlmaSoft"
         android:textColor="@android:color/black"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/btnSupplier"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/btnProduct"
         android:layout_width="165dp"
         android:layout_height="153dp"
-        android:layout_marginStart="41dp"
+        android:layout_marginStart="40dp"
         android:layout_marginEnd="31dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/icoprod"
@@ -45,7 +49,8 @@
         app:layout_constraintBottom_toTopOf="@+id/textViewProducto"
         app:layout_constraintEnd_toStartOf="@+id/btnSupplier"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/buttonProveedor"
@@ -57,22 +62,26 @@
         android:contentDescription="Botón de proveedores"
         app:layout_constraintBottom_toTopOf="@+id/textViewProveedor"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btnProduct"
-        app:layout_constraintTop_toBottomOf="@+id/textViewHome" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewHome"
+        app:layout_constraintVertical_bias="0.977"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textViewProveedor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="2dp"
-        android:layout_marginBottom="235dp"
+        android:layout_marginBottom="244dp"
         android:text="@string/TexProveedor"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewProducto"
-        app:layout_constraintTop_toBottomOf="@+id/btnSupplier" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSupplier"
+        tools:ignore="UnknownId" />
 
     <TextView
         android:id="@+id/textViewProducto"
