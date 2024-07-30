@@ -5,18 +5,15 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.almasoft.R;
 import com.example.almasoft.model.Product;
 import com.example.almasoft.viewmodel.ProductViewModel;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +21,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
     private List<Product> products = new ArrayList<>();
     private OnItemClickListener listener;
     private Context context;
-
+    private ProductViewModel productViewModel;
 
     @NonNull
     @Override
@@ -46,19 +43,40 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
         holder.tvLocation.setText(currentProduct.getAddress());
         holder.tvQuantity.setText(String.valueOf(currentProduct.getQuantity()));
 
+        productViewModel = new ViewModelProvider((ViewModelStoreOwner) context).get(ProductViewModel.class);
+
         holder.buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //editTextName.setText(currentProduct.getName());
-                //editTextPrice.setText(String.valueOf(currentProduct.getSalePrice()));
-                Toast.makeText(context, "Botón presionado!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, ProductCreateActivity.class);
+                intent.putExtra("productId", 1);
+                context.startActivity(intent);
             }
         });
 
         holder.buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                currentProduct.setState(0);
+                productViewModel.update(currentProduct);
+            }
+        });
 
+        holder.btnInbound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ProductInboundActivity.class);
+                intent.putExtra("productId", currentProduct.getId());
+                context.startActivity(intent);
+            }
+        });
+
+        holder.btnOutbound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ProductOutboundActivity.class);
+                intent.putExtra("productId", currentProduct.getId());
+                context.startActivity(intent);
             }
         });
     }
@@ -74,7 +92,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
     }
 
     class ProductHolder extends RecyclerView.ViewHolder {
-        private Button buttonEdit, buttonDelete;
+        private ImageButton buttonEdit, buttonDelete, btnInbound, btnOutbound;
 
         private TextView tvName, tvSalePrice,tvPurchasePrice, tvBrand, tvLocation, tvQuantity;
 
@@ -87,8 +105,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
             tvLocation = itemView.findViewById(R.id.tvLocation);
             tvQuantity = itemView.findViewById(R.id.tvQuantity);
 
-            buttonEdit = itemView.findViewById(R.id.button_edit);
-            buttonDelete = itemView.findViewById(R.id.button_delete);
+            buttonEdit = itemView.findViewById(R.id.btnEdit);
+            buttonDelete = itemView.findViewById(R.id.btnDelete);
+            btnInbound = itemView.findViewById(R.id.btnInbound);
+            btnOutbound = itemView.findViewById(R.id.btnOutbound);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

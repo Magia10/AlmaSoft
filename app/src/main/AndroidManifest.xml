@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,21 +15,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlmaSoft"
         tools:targetApi="31">
+
+        <!-- Actividades existentes -->
         <activity
-            android:name=".vista.MainActivity"
+            android:name=".view.ProductMovementsActivity"
             android:exported="false" />
         <activity
-            android:name=".vista.ActualizarActivity"
+            android:name=".view.SupplierActivity"
             android:exported="false" />
         <activity
-            android:name=".vista.EliminarActivity"
+            android:name=".view.ProductInboundActivity"
             android:exported="false" />
         <activity
-            android:name=".vista.GestionUsuarioActivity"
+            android:name=".view.ProductOutboundActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ProductHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ProductRecordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ProductCreateActivity"
             android:exported="false" />
         <activity
             android:name=".vista.ConsultarActivity"
             android:exported="false" />
+
+        <!-- Actividad Proveedor-->
+
         <activity
             android:name=".vista.QueryActivity2"
             android:exported="false" />
@@ -45,6 +65,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

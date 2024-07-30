@@ -1,14 +1,11 @@
 package com.example.almasoft.viewmodel;
-// viewmodel/ProductViewModel.java
+
 import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-
 import com.example.almasoft.model.Product;
 import com.example.almasoft.repository.ProductRepository;
-
 import java.util.List;
 
 public class ProductViewModel extends AndroidViewModel {
@@ -32,13 +29,10 @@ public class ProductViewModel extends AndroidViewModel {
         repository.delete(product);
     }
 
-    public void deleteAllProducts() {
-        repository.deleteAllProducts();
-    }
-
     public LiveData<List<Product>> getAllProducts() {
         return allProducts;
     }
 
+    public LiveData<Product> getProductById(int id){return repository.getProductById(id);}
 }
 
