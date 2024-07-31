@@ -16,7 +16,27 @@
         android:theme="@style/Theme.AlmaSoft"
         tools:targetApi="31">
 
-        <!-- Actividades existentes -->
+        <activity
+            android:name=".view.ActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.EditarProveedorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.EliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.GestionUsuarioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ListadoProveedoresActivity"
+            android:exported="false" />
         <activity
             android:name=".view.ProductMovementsActivity"
             android:exported="false" />
@@ -36,32 +56,19 @@
             android:name=".view.ProductRecordActivity"
             android:exported="false" />
         <activity
-            android:name=".view.HomeActivity"
-            android:exported="false" />
-        <activity
             android:name=".view.ProductCreateActivity"
             android:exported="false" />
         <activity
-            android:name=".vista.ConsultarActivity"
-            android:exported="false" />
-
-        <!-- Actividad Proveedor-->
-
-        <activity
-            android:name=".vista.QueryActivity2"
+            android:name=".view.RegistrarUsuarioActivity"
             android:exported="false" />
         <activity
-            android:name=".vista.QueryActivity"
+            android:name=".view.RegistrarProveedorActivity"
             android:exported="false" />
         <activity
-            android:name=".vista.RegistrarUsuarioActivity"
-            android:exported="false" />
-        <activity
-            android:name=".vista.LoginActivity"
+            android:name=".view.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

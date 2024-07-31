@@ -8,7 +8,7 @@
     android:background="@drawable/login"
     android:gravity="end|bottom"
     android:orientation="vertical"
-    tools:context=".vista.LoginActivity">
+    tools:context=".view.LoginActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

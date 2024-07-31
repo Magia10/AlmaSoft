@@ -1,4 +1,4 @@
-package com.example.almasoft.vista;
+package com.example.almasoft.view;
 
 import android.content.Intent;
 import android.os.Bundle;

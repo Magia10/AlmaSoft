@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".vista.ConsultarActivity">
+    tools:context=".view.ConsultarActivity">
 
     <TextView
         android:id="@+id/textView"

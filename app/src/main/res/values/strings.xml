@@ -26,4 +26,33 @@
     <string name="btn_reiniciar">Reiniciar</string>
     <string name="lbl_registrarse">Registrarse Ahora!</string>
     <string name="IB">Información</string>
+    <string name="TextNombre">Nombre: </string>
+
+    <string name="TextListarProvedor">LISTAR PROVEEDOR</string>
+    <string name="TexNombreCodigo">Codigo o nombre</string>
+    <string name="TexProducto">PRODUCTO</string>
+    <string name="TexProveedor">PROVEEDOR</string>
+    <string name="TextEditarProvedor">Editar Proveedor</string>
+    <string name="TextProductoNuevo">NUEVO PRODUCTO</string>
+    <string name="TextProvedorNuevo">NUEVO PROVEEDOR</string>
+    <string name="TextProvedorNombre">Nombre</string>
+    <string name="TextProvedorRuc">Ruc</string>
+    <string name="TextProvedorDir">Direccion</string>
+    <string name="TextProveedorCuidad">Ciudad</string>
+
+    <string name="BtnIngresar">Iniciar Sesión</string>
+    <string name="Btnregresar">Regresar</string>
+    <string name="BtnBuscar">Buscar</string>
+    <string name="Btnregistrar">Registrar</string>
+    <string name="Btnreiniciar">Reiniciar</string>
+    <string name="BtnGuardar">Guardar</string>
+
+    <string-array name="location_array">
+        <item>Ubicación 1</item>
+        <item>Ubicación 2</item>
+        <item>Ubicación 3</item>
+        <item>Ubicación 4</item>
+        <item>Ubicación 5</item>
+        <!-- Añade más ubicaciones según sea necesario -->
+    </string-array>
 </resources>
