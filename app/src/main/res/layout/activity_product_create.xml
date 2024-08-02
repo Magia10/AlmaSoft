@@ -9,6 +9,21 @@
     tools:context=".view.ProductCreateActivity">
 
     <TextView
+        android:id="@+id/textViewProducto"
+        android:layout_width="146dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="80dp"
+        android:text="@string/TextProductoNuevo"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_name"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
         android:id="@+id/textViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,7 +74,8 @@
         app:layout_constraintBottom_toTopOf="@+id/edit_text_quantity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_name" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_name"
+        tools:ignore="Autofill,TextFields" />
 
     <TextView
         android:id="@+id/textViewQuantity"
@@ -87,7 +103,8 @@
         app:layout_constraintBottom_toTopOf="@+id/edit_text_purchase_price"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_brand" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_brand"
+        tools:ignore="Autofill" />
 
     <TextView
         android:id="@+id/textViewPurchasePrice"
@@ -109,19 +126,20 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_text_quantity"
         android:layout_marginBottom="13dp"
-        android:hint="Precio de Compra"
+        android:hint="@string/precio_de_compra"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/edit_text_public_price"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_quantity" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_quantity"
+        tools:ignore="Autofill" />
 
     <TextView
         android:id="@+id/textViewPublicPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
-        android:text="Precio Público"
+        android:text="@string/precio_p_blico"
         android:textColor="@android:color/black"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/edit_text_public_price"
@@ -137,12 +155,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_text_purchase_price"
         android:layout_marginBottom="9dp"
-        android:hint="Precio Público"
+        android:hint="@string/sale_price"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/spinner_location"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_purchase_price" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_purchase_price"
+        tools:ignore="Autofill" />
 
     <Spinner
         android:id="@+id/spinner_location"
@@ -198,20 +217,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/agregar" />
-
-    <TextView
-        android:id="@+id/textViewProducto"
-        android:layout_width="146dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="80dp"
-        android:text="@string/TextProductoNuevo"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/edit_text_name"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

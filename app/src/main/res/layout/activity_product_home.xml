@@ -50,22 +50,6 @@
         app:layout_constraintTop_toBottomOf="@id/textViewTitle" />
 
     <Button
-        android:id="@+id/btnNewProduct"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:text="Nuevo Producto"
-        android:textSize="25sp"
-        android:background="@drawable/rounded_button"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/btnMovements"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5" />
-
-    <Button
         android:id="@+id/btnRecords"
         android:layout_width="0dp"
         android:layout_height="100dp"
@@ -76,7 +60,23 @@
         android:textSize="25sp"
         android:background="@drawable/rounded_button"
         android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/btnNewProduct"
+        app:layout_constraintTop_toBottomOf="@id/btnMovements"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <Button
+        android:id="@+id/btnReport"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/reporte_button"
+        android:textSize="25sp"
+        android:background="@drawable/rounded_button"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnRecords"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5" />

@@ -15,21 +15,13 @@ public class ProductHomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_product_home);
 
         Button btnMovements = findViewById(R.id.btnMovements);
-        Button btnNew = findViewById(R.id.btnNewProduct);
         Button btnRecords = findViewById(R.id.btnRecords);
+        Button btnReport = findViewById(R.id.btnReport);
 
         btnMovements.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ProductHomeActivity.this, ProductMovementsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        btnNew.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ProductHomeActivity.this, ProductCreateActivity.class);
                 startActivity(intent);
             }
         });
@@ -42,5 +34,12 @@ public class ProductHomeActivity extends AppCompatActivity {
             }
         });
 
+        btnReport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProductHomeActivity.this, ProductReportActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

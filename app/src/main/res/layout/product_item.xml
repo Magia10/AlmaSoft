@@ -182,24 +182,5 @@
             android:layout_margin="4dp"
             tools:ignore="ContentDescription" />
 
-        <ImageButton
-            android:id="@+id/btnInbound"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/plus"
-            android:background="@drawable/circular_button"
-            android:scaleType="centerCrop"
-            android:layout_margin="4dp"
-            tools:ignore="ContentDescription" />
-
-        <ImageButton
-            android:id="@+id/btnOutbound"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/menos"
-            android:background="@drawable/circular_button"
-            android:scaleType="centerCrop"
-            android:layout_margin="4dp"
-            tools:ignore="ContentDescription" />
     </LinearLayout>
 </LinearLayout>

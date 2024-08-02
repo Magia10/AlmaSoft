@@ -61,24 +61,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
                 productViewModel.update(currentProduct);
             }
         });
-
-        holder.btnInbound.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, ProductInboundActivity.class);
-                intent.putExtra("productId", currentProduct.getId());
-                context.startActivity(intent);
-            }
-        });
-
-        holder.btnOutbound.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, ProductOutboundActivity.class);
-                intent.putExtra("productId", currentProduct.getId());
-                context.startActivity(intent);
-            }
-        });
     }
 
     @Override
@@ -107,8 +89,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
 
             buttonEdit = itemView.findViewById(R.id.btnEdit);
             buttonDelete = itemView.findViewById(R.id.btnDelete);
-            btnInbound = itemView.findViewById(R.id.btnInbound);
-            btnOutbound = itemView.findViewById(R.id.btnOutbound);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

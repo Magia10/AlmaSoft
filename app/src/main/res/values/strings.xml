@@ -46,6 +46,11 @@
     <string name="Btnregistrar">Registrar</string>
     <string name="Btnreiniciar">Reiniciar</string>
     <string name="BtnGuardar">Guardar</string>
+    <string name="precio_de_compra">Precio de Compra</string>
+    <string name="precio_p_blico">Precio Público</string>
+    <string name="sale_price">Precio Público</string>
+    <string name="title_movement">MOVIMIENTOS</string>
+    <string name="reporte_button">Reporte</string>
 
     <string-array name="location_array">
         <item>Ubicación 1</item>
@@ -55,4 +60,6 @@
         <item>Ubicación 5</item>
         <!-- Añade más ubicaciones según sea necesario -->
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

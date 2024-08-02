@@ -31,9 +31,9 @@ public class UsuarioAdapter extends CursorAdapter {
         TextView password = (TextView) view.findViewById(R.id.tv_password);
 
         //obtencion de datos BD
-        String name = cursor.getString(cursor.getColumnIndex(UsuarioContract.UsuarioEntry.NOMBRE));
-        String usu = cursor.getString(cursor.getColumnIndex(UsuarioContract.UsuarioEntry.COD_USUARIO));
-        String pass = cursor.getString(cursor.getColumnIndex(UsuarioContract.UsuarioEntry.PASSWORD));
+        @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(UsuarioContract.UsuarioEntry.NOMBRE));
+        @SuppressLint("Range") String usu = cursor.getString(cursor.getColumnIndex(UsuarioContract.UsuarioEntry.COD_USUARIO));
+        @SuppressLint("Range") String pass = cursor.getString(cursor.getColumnIndex(UsuarioContract.UsuarioEntry.PASSWORD));
 
         //asignar datos
         nombre.setText("Nombre: " + name);
