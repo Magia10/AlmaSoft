@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#97F3FF"
+    android:background="@drawable/fondo2"
     tools:context=".view.HomeActivity">
 
     <ImageView
@@ -35,50 +35,64 @@
 
     <Button
         android:id="@+id/btnMovements"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/MarronOscuro"
         android:text="Movimientos"
         android:textColor="@android:color/white"
         android:textSize="25sp"
-        android:background="@drawable/rounded_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewTitle" />
 
     <Button
         android:id="@+id/btnRecords"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="100dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
         android:text="Productos"
+        android:backgroundTint="@color/MarronOscuro"
         android:textSize="25sp"
-        android:background="@drawable/rounded_button"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/btnMovements"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnMovements" />
 
     <Button
         android:id="@+id/btnReport"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:text="@string/reporte_button"
         android:textSize="25sp"
-        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/MarronOscuro"
         android:textColor="@android:color/white"
         app:layout_constraintTop_toBottomOf="@id/btnRecords"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="39dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/MarronOscuro"
+        android:onClick="enviarHome"
+        android:text="@string/Btnregresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnReport"
+        tools:ignore="ButtonStyle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

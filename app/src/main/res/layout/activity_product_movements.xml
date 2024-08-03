@@ -16,15 +16,15 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icoprod" />
+        app:srcCompat="@drawable/inbound" />
 
     <TextView
         android:id="@+id/textViewProducto"
         android:layout_width="110dp"
         android:layout_height="25dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="180dp"
         android:layout_marginBottom="55dp"
-        android:text="@string/title_movement"
+        android:text="MOVIMIENTOS"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/recycler_view"
@@ -51,6 +51,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:backgroundTint="@color/MarronOscuro"
         android:text="Buscar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/etSearch"

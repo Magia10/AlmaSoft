@@ -25,6 +25,9 @@ public interface ProductDao {
     @Query("SELECT * FROM product_table WHERE state = 1 ORDER BY name ASC")
     LiveData<List<Product>> getAllProducts();
 
+    @Query("SELECT * FROM product_table")
+    LiveData<List<Product>> getAllProduct();
+
     @Query("SELECT * FROM product_table WHERE id = :filter")
     LiveData<Product> getProductById(int filter);
 }

@@ -11,12 +11,14 @@ import java.util.concurrent.Executors;
 public class ProductRepository {
     private ProductDao productDao;
     private LiveData<List<Product>> allProducts;
+    private LiveData<List<Product>> allProduct;
     private ExecutorService executorService;
 
     public ProductRepository(Application application) {
         database db = database.getInstance(application);
         productDao = db.productDao();
         allProducts = productDao.getAllProducts();
+        allProduct = productDao.getAllProduct();
         executorService = Executors.newSingleThreadExecutor();
     }
 
@@ -34,6 +36,10 @@ public class ProductRepository {
 
     public LiveData<List<Product>> getAllProducts() {
         return allProducts;
+    }
+
+    public LiveData<List<Product>> getAllProduct() {
+        return allProduct;
     }
 
     public LiveData<Product> getProductById(int id) {

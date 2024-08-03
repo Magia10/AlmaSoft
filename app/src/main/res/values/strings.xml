@@ -49,8 +49,8 @@
     <string name="precio_de_compra">Precio de Compra</string>
     <string name="precio_p_blico">Precio Público</string>
     <string name="sale_price">Precio Público</string>
-    <string name="title_movement">MOVIMIENTOS</string>
-    <string name="reporte_button">Reporte</string>
+    <string name="title_movement">REPORTE DE MOVIMIENTOS</string>
+    <string name="reporte_button">Reportes</string>
 
     <string-array name="location_array">
         <item>Ubicación 1</item>

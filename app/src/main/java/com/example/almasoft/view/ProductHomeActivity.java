@@ -17,12 +17,14 @@ public class ProductHomeActivity extends AppCompatActivity {
         Button btnMovements = findViewById(R.id.btnMovements);
         Button btnRecords = findViewById(R.id.btnRecords);
         Button btnReport = findViewById(R.id.btnReport);
+        Button btnBack = findViewById(R.id.btnBack);
 
         btnMovements.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ProductHomeActivity.this, ProductMovementsActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -31,6 +33,7 @@ public class ProductHomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ProductHomeActivity.this, ProductRecordActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -39,6 +42,16 @@ public class ProductHomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ProductHomeActivity.this, ProductReportActivity.class);
                 startActivity(intent);
+                finish();
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProductHomeActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

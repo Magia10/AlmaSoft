@@ -45,7 +45,7 @@
             android:id="@+id/buttonFilter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Filtrar"
+            android:text="Buscar"
             android:backgroundTint="@color/MarronOscuro" />
     </LinearLayout>
 
