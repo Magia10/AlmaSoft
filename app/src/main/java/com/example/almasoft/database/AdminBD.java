@@ -36,7 +36,9 @@ public class AdminBD extends SQLiteOpenHelper {
                 + ProveedorContract.ProveedorEntry.NOMBRE + " TEXT NOT NULL, "
                 + ProveedorContract.ProveedorEntry.RUC + " TEXT NOT NULL, "
                 + ProveedorContract.ProveedorEntry.DIRECCION + " TEXT NOT NULL, "
-                + ProveedorContract.ProveedorEntry.CIUDAD + " TEXT NOT NULL)";
+                + ProveedorContract.ProveedorEntry.CIUDAD + " TEXT NOT NULL, "
+                + ProveedorContract.ProveedorEntry.LOGO + " BLOB, "  // Columna para almacenar el logo
+                + ProveedorContract.ProveedorEntry.CONTRATO + " BLOB)";  // Columna para almacenar el contrato
         db.execSQL(SQL_CREATE_PROVEEDOR_TABLE);
     }
 
@@ -82,13 +84,15 @@ public class AdminBD extends SQLiteOpenHelper {
 
     // Métodos para manejar proveedores
 
-    public long guardarProveedor(String nombre, String ruc, String direccion, String ciudad) {
+    public long guardarProveedor(String nombre, String ruc, String direccion, String ciudad, byte[] logo, byte[] contrato) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(ProveedorContract.ProveedorEntry.NOMBRE, nombre);
         values.put(ProveedorContract.ProveedorEntry.RUC, ruc);
         values.put(ProveedorContract.ProveedorEntry.DIRECCION, direccion);
         values.put(ProveedorContract.ProveedorEntry.CIUDAD, ciudad);
+        values.put(ProveedorContract.ProveedorEntry.LOGO, logo);  // Guardar logo
+        values.put(ProveedorContract.ProveedorEntry.CONTRATO, contrato);  // Guardar contrato
 
         long newRowId = db.insert(ProveedorContract.ProveedorEntry.TABLE_NAME, null, values);
         db.close();
@@ -102,7 +106,9 @@ public class AdminBD extends SQLiteOpenHelper {
                 ProveedorContract.ProveedorEntry.NOMBRE,
                 ProveedorContract.ProveedorEntry.RUC,
                 ProveedorContract.ProveedorEntry.DIRECCION,
-                ProveedorContract.ProveedorEntry.CIUDAD
+                ProveedorContract.ProveedorEntry.CIUDAD,
+                ProveedorContract.ProveedorEntry.LOGO,
+                ProveedorContract.ProveedorEntry.CONTRATO
         };
 
         String selection = ProveedorContract.ProveedorEntry.ID + " = ?";
@@ -124,7 +130,9 @@ public class AdminBD extends SQLiteOpenHelper {
                     cursor.getString(cursor.getColumnIndexOrThrow(ProveedorContract.ProveedorEntry.NOMBRE)),
                     cursor.getString(cursor.getColumnIndexOrThrow(ProveedorContract.ProveedorEntry.RUC)),
                     cursor.getString(cursor.getColumnIndexOrThrow(ProveedorContract.ProveedorEntry.DIRECCION)),
-                    cursor.getString(cursor.getColumnIndexOrThrow(ProveedorContract.ProveedorEntry.CIUDAD))
+                    cursor.getString(cursor.getColumnIndexOrThrow(ProveedorContract.ProveedorEntry.CIUDAD)),
+                    cursor.getBlob(cursor.getColumnIndexOrThrow(ProveedorContract.ProveedorEntry.LOGO)),
+                    cursor.getBlob(cursor.getColumnIndexOrThrow(ProveedorContract.ProveedorEntry.CONTRATO))
             );
             cursor.close();
             db.close();
@@ -156,6 +164,8 @@ public class AdminBD extends SQLiteOpenHelper {
         values.put(ProveedorContract.ProveedorEntry.RUC, proveedor.getRuc());
         values.put(ProveedorContract.ProveedorEntry.DIRECCION, proveedor.getDireccion());
         values.put(ProveedorContract.ProveedorEntry.CIUDAD, proveedor.getCiudad());
+        values.put(ProveedorContract.ProveedorEntry.LOGO, proveedor.getLogo());  // Actualizar logo
+        values.put(ProveedorContract.ProveedorEntry.CONTRATO, proveedor.getContrato());  // Actualizar contrato
 
         String selection = ProveedorContract.ProveedorEntry.ID + " = ?";
         String[] selectionArgs = {String.valueOf(proveedor.getId())};

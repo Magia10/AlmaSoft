@@ -3,11 +3,14 @@ package com.example.almasoft.view;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,6 +60,7 @@ public class ProveedorAdapter extends BaseAdapter {
         TextView tvRuc = convertView.findViewById(R.id.TextRuc);
         TextView tvDireccion = convertView.findViewById(R.id.TextDireccion);
         TextView tvCiudad = convertView.findViewById(R.id.TextCiudad);
+        ImageView ivLogo = convertView.findViewById(R.id.imageLogo);
         Button btnEditar = convertView.findViewById(R.id.btnEditar);
         Button btnEliminar = convertView.findViewById(R.id.btnEliminar);
 
@@ -65,15 +69,24 @@ public class ProveedorAdapter extends BaseAdapter {
         tvDireccion.setText(proveedor.getDireccion());
         tvCiudad.setText(proveedor.getCiudad());
 
+        // Convertir el logo de byte[] a Bitmap
+        if (proveedor.getLogo() != null && proveedor.getLogo().length > 0) {
+            Bitmap logoBitmap = BitmapFactory.decodeByteArray(proveedor.getLogo(), 0, proveedor.getLogo().length);
+            ivLogo.setImageBitmap(logoBitmap);
+        } else {
+            ivLogo.setImageResource(R.drawable.user); // Imagen predeterminada si no hay logo
+        }
+
         btnEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, EditarProveedorActivity.class);
-                intent.putExtra("proveedorId", proveedor.getId()); // Corregido para que coincida con el intent extra usado en EditarProveedorActivity
+                intent.putExtra("proveedorId", proveedor.getId());
                 intent.putExtra("nombre", proveedor.getNombre());
                 intent.putExtra("ruc", proveedor.getRuc());
                 intent.putExtra("direccion", proveedor.getDireccion());
                 intent.putExtra("ciudad", proveedor.getCiudad());
+                intent.putExtra("logo", proveedor.getLogo()); // Agregado para pasar el logo al editar
                 context.startActivity(intent);
             }
         });

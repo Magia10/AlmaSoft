@@ -20,7 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:hint="@string/TextProvedorNombre"
-        android:maxLength="50" />
+        android:maxLength="50"
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/editTextRuc"
@@ -28,7 +29,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:hint="@string/TextProvedorRuc"
-        android:maxLength="20" />
+        android:maxLength="20"
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/editTextDireccion"
@@ -36,7 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:hint="@string/TextProvedorDir"
-        android:maxLength="100" />
+        android:maxLength="100"
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/editTextCiudad"
@@ -44,9 +47,40 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:hint="@string/TextProveedorCuidad"
-        android:maxLength="50" />
+        android:maxLength="50"
+        android:minHeight="48dp" />
 
-    <!-- Botones para actualizar, cancelar y eliminar -->
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="235dp"
+        android:layout_height="124dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/LogoDescripcion"
+        android:scaleType="fitCenter"
+        android:src="@drawable/user" />
+
+    <Button
+        android:id="@+id/btnCargarLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cargar Logo" />
+
+    <!-- Botón para mostrar el contrato -->
+    <Button
+        android:id="@+id/btnVerContrato"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mostrar Contrato" />
+
+    <!-- Botón para cargar el contrato -->
+    <Button
+        android:id="@+id/btnCargarContrato"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cargar Contrato" />
+
+    <!-- Botones para actualizar y cancelar -->
     <Button
         android:id="@+id/btnActualizar"
         android:layout_width="match_parent"

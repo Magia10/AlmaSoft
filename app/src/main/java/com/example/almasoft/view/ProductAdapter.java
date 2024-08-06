@@ -1,30 +1,33 @@
 package com.example.almasoft.view;
 
 import android.content.Context;
-import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.almasoft.R;
 import com.example.almasoft.model.Product;
-import com.example.almasoft.viewmodel.ProductViewModel;
+import com.example.almasoft.model.Proveedor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductHolder> {
-    private List<Product> products = new ArrayList<>();
+    private List<Proveedor> proveedores = new ArrayList<>();
     private OnItemClickListener listener;
     private Context context;
 
+    public ProductAdapter(Context context) {
+        this.context = context;
+    }
 
     @NonNull
     @Override
@@ -33,81 +36,91 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
                 .inflate(R.layout.product_item, parent, false);
         return new ProductHolder(itemView);
     }
-    public ProductAdapter(Context context){
-        this.context = context;
-    }
+
     @Override
     public void onBindViewHolder(@NonNull ProductHolder holder, int position) {
-        Product currentProduct = products.get(position);
-        holder.tvName.setText(currentProduct.getName());
-        holder.tvSalePrice.setText(String.valueOf(currentProduct.getSalePrice()));
-        holder.tvPurchasePrice.setText(String.valueOf(currentProduct.getPurchasePrice()));
-        holder.tvBrand.setText(currentProduct.getBrand());
-        holder.tvLocation.setText(currentProduct.getAddress());
-        holder.tvQuantity.setText(String.valueOf(currentProduct.getQuantity()));
+        Proveedor currentProveedor = proveedores.get(position);
 
-        holder.buttonEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //editTextName.setText(currentProduct.getName());
-                //editTextPrice.setText(String.valueOf(currentProduct.getSalePrice()));
-                Toast.makeText(context, "Botón presionado!", Toast.LENGTH_SHORT).show();
+        // Convertir el logo de byte[] a Bitmap
+        if (currentProveedor.getLogo() != null && currentProveedor.getLogo().length > 0) {
+            Bitmap logoBitmap = BitmapFactory.decodeByteArray(currentProveedor.getLogo(), 0, currentProveedor.getLogo().length);
+            holder.ivLogo.setImageBitmap(logoBitmap);
+        } else {
+            holder.ivLogo.setImageResource(R.drawable.user); // Imagen predeterminada si no hay logo
+        }
+
+        // Establecer los datos del proveedor
+        holder.tvNombre.setText(currentProveedor.getNombre());
+        holder.tvRuc.setText(currentProveedor.getRuc());
+        holder.tvDireccion.setText(currentProveedor.getDireccion());
+        holder.tvCiudad.setText(currentProveedor.getCiudad());
+
+        holder.buttonEdit.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onEditClick(currentProveedor);
             }
         });
 
-        holder.buttonDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        holder.buttonDelete.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onDeleteClick(currentProveedor);
+            }
+        });
 
+        holder.buttonShowContract.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onShowContractClick(currentProveedor);
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return products.size();
+        return proveedores.size();
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setProveedores(List<Proveedor> proveedores) {
+        this.proveedores = proveedores;
         notifyDataSetChanged();
     }
 
-    class ProductHolder extends RecyclerView.ViewHolder {
-        private Button buttonEdit, buttonDelete;
+    public void setProducts(List<Product> products) {
 
-        private TextView tvName, tvSalePrice,tvPurchasePrice, tvBrand, tvLocation, tvQuantity;
+    }
+
+    class ProductHolder extends RecyclerView.ViewHolder {
+        private ImageView ivLogo;
+        private TextView tvNombre, tvRuc, tvDireccion, tvCiudad;
+        private Button buttonEdit, buttonDelete, buttonShowContract;
 
         public ProductHolder(View itemView) {
             super(itemView);
-            tvName = itemView.findViewById(R.id.tvName);
-            tvSalePrice = itemView.findViewById(R.id.tvSalePrice);
-            tvPurchasePrice = itemView.findViewById(R.id.tvPurchasePrice);
-            tvBrand = itemView.findViewById(R.id.tvBrand);
-            tvLocation = itemView.findViewById(R.id.tvLocation);
-            tvQuantity = itemView.findViewById(R.id.tvQuantity);
+            ivLogo = itemView.findViewById(R.id.imageLogo);
+            tvNombre = itemView.findViewById(R.id.TextNombre);
+            tvRuc = itemView.findViewById(R.id.TextRuc);
+            tvDireccion = itemView.findViewById(R.id.TextDireccion);
+            tvCiudad = itemView.findViewById(R.id.TextCiudad);
+            buttonEdit = itemView.findViewById(R.id.btnEditar);
+            buttonDelete = itemView.findViewById(R.id.btnEliminar);
+            buttonShowContract = itemView.findViewById(R.id.btnMostrarContrato);
 
-            buttonEdit = itemView.findViewById(R.id.button_edit);
-            buttonDelete = itemView.findViewById(R.id.button_delete);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    if (listener != null && position != RecyclerView.NO_POSITION) {
-                        listener.onItemClick(products.get(position));
-                    }
+            itemView.setOnClickListener(v -> {
+                int position = getAdapterPosition();
+                if (listener != null && position != RecyclerView.NO_POSITION) {
+                    listener.onItemClick(proveedores.get(position));
                 }
             });
         }
     }
 
     public interface OnItemClickListener {
-        void onItemClick(Product product);
+        void onItemClick(Proveedor proveedor);
+        void onEditClick(Proveedor proveedor);
+        void onDeleteClick(Proveedor proveedor);
+        void onShowContractClick(Proveedor proveedor);
     }
 
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
     }
 }
-

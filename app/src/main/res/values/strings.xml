@@ -25,6 +25,8 @@
 
     <string name="TexProducto">PRODUCTO</string>
     <string name="TexProveedor">PROVEEDOR</string>
+    <string name="LogoDescripcion">Logo</string>
+
 
     <string name="rb1">Masculino</string>
     <string name="rb2">Femenino</string>
@@ -37,6 +39,11 @@
     <string name="Btnregistrar">Registrar</string>
     <string name="Btnreiniciar">Reiniciar</string>
     <string name="BtnGuardar">Guardar</string>
+    <string name="TextLogo">Logo</string>
+
+    <string name="BtnCargarLogo">Cargar Logo</string>
+    <string name="BtnGuardarContrato">Cargar Contrato</string>
+    <string name="BtnMostrarContrato">Mostrar Contrato</string>
 
     <string name="IB">Información</string>
     <string-array name="location_array">

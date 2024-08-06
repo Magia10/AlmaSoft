@@ -3,6 +3,8 @@ package com.example.almasoft.view;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -126,7 +128,10 @@ public class ListadoProveedoresActivity extends AppCompatActivity {
                 String direccion = cursor.getString(cursor.getColumnIndexOrThrow(ProveedorContract.ProveedorEntry.DIRECCION));
                 String ciudad = cursor.getString(cursor.getColumnIndexOrThrow(ProveedorContract.ProveedorEntry.CIUDAD));
 
-                Proveedor proveedor = new Proveedor(id, nombre, ruc, direccion, ciudad);
+                byte[] logoBytes = cursor.getBlob(cursor.getColumnIndexOrThrow(ProveedorContract.ProveedorEntry.LOGO));
+                byte[] contratoBytes = cursor.getBlob(cursor.getColumnIndexOrThrow(ProveedorContract.ProveedorEntry.CONTRATO));
+
+                Proveedor proveedor = new Proveedor(id, nombre, ruc, direccion, ciudad, logoBytes, contratoBytes);
                 listaProveedores.add(proveedor);
             } while (cursor.moveToNext());
         }
@@ -166,5 +171,9 @@ public class ListadoProveedoresActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         loadProveedores(); // Recargar la lista al volver a la actividad
+    }
+
+    private Bitmap getBitmapFromBytes(byte[] bytes) {
+        return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
     }
 }

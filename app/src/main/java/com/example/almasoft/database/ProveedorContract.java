@@ -14,5 +14,8 @@ public final class ProveedorContract {
         public static final String RUC = "ruc";
         public static final String DIRECCION = "direccion";
         public static final String CIUDAD = "ciudad";
+        public static final String LOGO = "logo";  // Columna para el logo
+        public static final String CONTRATO = "contrato";  // Columna para el contrato
     }
 }
+

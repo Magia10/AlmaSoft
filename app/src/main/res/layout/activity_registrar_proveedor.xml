@@ -12,30 +12,117 @@
         android:id="@+id/textViewRegistrarProveedor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="51dp"
-        android:layout_marginBottom="138dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="40dp"
         android:text="@string/TextProvedorNuevo"
         android:textAlignment="center"
         android:textColor="@color/MarronOscuro"
         android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewLogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="PxUsage" />
 
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="389dp"
+        android:background="@drawable/user"
+        android:contentDescription="@string/LogoDescripcion"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnMostrarContrato"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRegistrarProveedor" />
+
+    <Button
+        android:id="@+id/btnMostrarContrato"
+        android:layout_width="158dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/BtnMostrarContrato"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewLogo"
+        app:layout_constraintTop_toBottomOf="@+id/btnGuardarContrato" />
+
+    <Button
+        android:id="@+id/btnCargarLogo"
+        android:layout_width="157dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/BtnCargarLogo"
+        app:layout_constraintStart_toEndOf="@+id/imageViewLogo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRegistrarProveedor" />
+
+    <Button
+        android:id="@+id/btnGuardarContrato"
+        android:layout_width="158dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/BtnGuardarContrato"
+        app:layout_constraintStart_toStartOf="@+id/btnCargarLogo"
+        app:layout_constraintTop_toBottomOf="@+id/btnCargarLogo" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="29dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout8"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout8"
+        tools:ignore="PxUsage,RtlHardcoded">
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="79dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/MarronOscuro"
+        android:text="@string/Btnregistrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnRegresar"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout8"
+        tools:ignore="ButtonStyle" />
+
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="19dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/MarronOscuro"
+        android:text="@string/Btnregresar"
+        app:layout_constraintEnd_toStartOf="@+id/btnRegistrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout8"
+        tools:ignore="ButtonStyle" />
+
     <LinearLayout
         android:id="@+id/linearLayout8"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="35dp"
+        android:layout_width="388dp"
+        android:layout_height="194dp"
+        android:layout_marginTop="44dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRegistrarProveedor"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo"
         tools:ignore="PxUsage">
 
         <LinearLayout
@@ -45,7 +132,7 @@
 
             <TextView
                 android:id="@+id/textViewNombre"
-                android:layout_width="132dp"
+                android:layout_width="134dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
@@ -56,7 +143,7 @@
 
             <EditText
                 android:id="@+id/txtNombre"
-                android:layout_width="252dp"
+                android:layout_width="266dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
@@ -87,9 +174,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:maxLength="11"
                 android:ems="10"
                 android:inputType="text"
+                android:maxLength="11"
                 tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
         </LinearLayout>
@@ -148,51 +235,6 @@
                 tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
         </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="24dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/btnRegresar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout8"
-        tools:ignore="PxUsage,RtlHardcoded">
-
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btnRegresar"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginStart="82dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="132dp"
-        android:layout_weight="1"
-        android:backgroundTint="@color/MarronOscuro"
-        android:text="@string/Btnregresar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnRegistrar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout9"
-        tools:ignore="ButtonStyle" />
-
-    <Button
-        android:id="@+id/btnRegistrar"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="94dp"
-        android:layout_weight="1"
-        android:backgroundTint="@color/MarronOscuro"
-        android:text="@string/Btnregistrar"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnRegresar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnRegresar"
-        tools:ignore="ButtonStyle" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
