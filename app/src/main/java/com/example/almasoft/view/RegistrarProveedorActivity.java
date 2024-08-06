@@ -18,9 +18,8 @@ import com.example.almasoft.R;
 import com.example.almasoft.database.AdminBD;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class RegistrarProveedorActivity extends AppCompatActivity {
 
@@ -50,7 +49,6 @@ public class RegistrarProveedorActivity extends AppCompatActivity {
         Button btnRegistrar = findViewById(R.id.btnRegistrar);
         Button btnCargarLogo = findViewById(R.id.btnCargarLogo);
         Button btnCargarContrato = findViewById(R.id.btnGuardarContrato);
-        Button btnMostrarContrato = findViewById(R.id.btnMostrarContrato);
 
         btnRegresar.setOnClickListener(v -> {
             Intent intent = new Intent(RegistrarProveedorActivity.this, ListadoProveedoresActivity.class);
@@ -79,17 +77,7 @@ public class RegistrarProveedorActivity extends AppCompatActivity {
         });
 
         btnCargarLogo.setOnClickListener(v -> openFileChooser(PICK_IMAGE_REQUEST));
-
         btnCargarContrato.setOnClickListener(v -> openFileChooser(PICK_PDF_REQUEST));
-
-        btnMostrarContrato.setOnClickListener(v -> {
-            if (contratoFile != null) {
-                // Implementar la visualización del contrato si es necesario
-                Toast.makeText(RegistrarProveedorActivity.this, "Contrato cargado y listo para mostrar", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(RegistrarProveedorActivity.this, "No se ha cargado ningún contrato", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     private void openFileChooser(int requestCode) {
@@ -128,15 +116,14 @@ public class RegistrarProveedorActivity extends AppCompatActivity {
     }
 
     private byte[] getBytesFromUri(Uri uri) throws IOException {
-        File file = new File(uri.getPath());
-        FileInputStream fis = new FileInputStream(file);
+        InputStream inputStream = getContentResolver().openInputStream(uri);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024];
         int length;
-        while ((length = fis.read(buffer)) != -1) {
+        while ((length = inputStream.read(buffer)) != -1) {
             baos.write(buffer, 0, length);
         }
-        fis.close();
+        inputStream.close();
         return baos.toByteArray();
     }
 }

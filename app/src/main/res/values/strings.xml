@@ -46,6 +46,9 @@
     <string name="BtnMostrarContrato">Mostrar Contrato</string>
 
     <string name="IB">Información</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="mostrar_contrato">Contrato</string>
     <string-array name="location_array">
         <item>Almacén 1</item>
         <item>Almacén 2</item>

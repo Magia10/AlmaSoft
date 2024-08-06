@@ -36,39 +36,28 @@
         android:contentDescription="@string/LogoDescripcion"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnMostrarContrato"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRegistrarProveedor" />
-
-    <Button
-        android:id="@+id/btnMostrarContrato"
-        android:layout_width="158dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="50dp"
-        android:text="@string/BtnMostrarContrato"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageViewLogo"
-        app:layout_constraintTop_toBottomOf="@+id/btnGuardarContrato" />
-
-    <Button
-        android:id="@+id/btnCargarLogo"
-        android:layout_width="157dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/BtnCargarLogo"
-        app:layout_constraintStart_toEndOf="@+id/imageViewLogo"
         app:layout_constraintTop_toBottomOf="@+id/textViewRegistrarProveedor" />
 
     <Button
         android:id="@+id/btnGuardarContrato"
         android:layout_width="158dp"
         android:layout_height="50dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
         android:text="@string/BtnGuardarContrato"
         app:layout_constraintStart_toStartOf="@+id/btnCargarLogo"
         app:layout_constraintTop_toBottomOf="@+id/btnCargarLogo" />
+
+    <Button
+        android:id="@+id/btnCargarLogo"
+        android:layout_width="157dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/BtnCargarLogo"
+        app:layout_constraintStart_toEndOf="@+id/imageViewLogo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRegistrarProveedor" />
 
     <LinearLayout
         android:id="@+id/linearLayout9"
